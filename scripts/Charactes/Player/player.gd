@@ -15,7 +15,6 @@ class_name Player
 @export var skill_tree_menu : Control
 @export var exit_menu : ExitMenu
 @export var player_sprite : Sprite2D
-@export var player_camera: Camera2D
 @export var viking_rage_timer : Timer
 @export var vulnerability_timer : Timer
 @export var invincibility_timer : Timer
@@ -396,7 +395,3 @@ func _input(event: InputEvent) -> void :
 		var skill_tree_camera = skill_tree_menu.get_node("Camera2D")
 		
 		skill_tree_menu.visible = not skill_tree_menu.visible
-		
-		player_camera.enabled = not player_camera.enabled
-		
-		skill_tree_camera.enabled = not skill_tree_camera.enabled
