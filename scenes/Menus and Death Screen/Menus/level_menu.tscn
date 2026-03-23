@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://crw6wkk478mg"]
+
+[ext_resource type="Script" uid="uid://dlyijur41ht4b" path="res://scripts/Menus and Death Screen/Level Menu/level_menu.gd" id="1_ekg86"]
+[ext_resource type="Texture2D" uid="uid://cblsk3xwr6c2x" path="res://assets/Menus and Death Screen/Level Menu/level_menu_background.png" id="2_408pv"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="3_pg2tc"]
+[ext_resource type="Texture2D" uid="uid://cq67g35rwgg28" path="res://assets/Menus and Death Screen/Level Menu/stat_arrow.png" id="4_408pv"]
+[ext_resource type="Texture2D" uid="uid://cpbji4vio1qym" path="res://assets/Menus and Death Screen/Level Menu/stat_arrow_hovered.png" id="5_pg2tc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rj3wb"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0fjm"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqwib"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_k08aj"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_7obll"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_2go0k"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_teein"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdp46"]
+font = ExtResource("3_pg2tc")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6flmm"]
+font = ExtResource("3_pg2tc")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxgv2"]
+font = ExtResource("3_pg2tc")
+font_size = 24
+
+[node name="LevelMenu" type="Control" unique_id=1065140838 node_paths=PackedStringArray("luck_value", "attack_value", "temperance_value", "arcane_value", "current_points", "xp_to_next_level")]
+layout_mode = 3
+anchor_left = 0.25300002
+anchor_top = 0.037
+anchor_right = 0.739
+anchor_bottom = 0.96300006
+offset_left = -0.45602417
+offset_top = 0.024000168
+offset_right = -0.32800293
+offset_bottom = -0.024047852
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekg86")
+luck_value = NodePath("LevelMenuBackground/VBoxContainer/VBoxContainer/LuckValue")
+attack_value = NodePath("LevelMenuBackground/VBoxContainer/HBoxContainer/AttackValue")
+temperance_value = NodePath("LevelMenuBackground/VBoxContainer/VBoxContainer4/TemperanceValue")
+arcane_value = NodePath("LevelMenuBackground/VBoxContainer/VBoxContainer2/ArcaneValue")
+current_points = NodePath("LevelMenuBackground/VBoxContainer2/CurrentPoints")
+xp_to_next_level = NodePath("LevelMenuBackground/VBoxContainer2/XPToNextLevel")
+
+[node name="LevelMenuBackground" type="Sprite2D" parent="." unique_id=2052329999]
+position = Vector2(280, 300)
+texture = ExtResource("2_408pv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelMenuBackground" unique_id=833803731]
+offset_left = -263.0
+offset_top = -198.0
+offset_right = 263.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="LevelMenuBackground/VBoxContainer" unique_id=834517033]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Luck" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer" unique_id=800867691]
+layout_mode = 2
+text = "Luck"
+label_settings = SubResource("LabelSettings_rj3wb")
+
+[node name="LuckDown" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer" unique_id=1612239878]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+flip_h = true
+flip_v = true
+
+[node name="LuckValue" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer" unique_id=734990183]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_u0fjm")
+horizontal_alignment = 1
+
+[node name="LuckUp" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer" unique_id=184145504]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelMenuBackground/VBoxContainer" unique_id=830463673]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Attack" type="Label" parent="LevelMenuBackground/VBoxContainer/HBoxContainer" unique_id=1575726044]
+layout_mode = 2
+text = "Attack"
+label_settings = SubResource("LabelSettings_jqwib")
+
+[node name="AttackDown" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/HBoxContainer" unique_id=1534357439]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+flip_h = true
+flip_v = true
+
+[node name="AttackValue" type="Label" parent="LevelMenuBackground/VBoxContainer/HBoxContainer" unique_id=1448368782]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_k08aj")
+horizontal_alignment = 1
+
+[node name="AttackUp" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/HBoxContainer" unique_id=1959994134]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+
+[node name="VBoxContainer4" type="HBoxContainer" parent="LevelMenuBackground/VBoxContainer" unique_id=1500272852]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Temperance" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer4" unique_id=1483029757]
+layout_mode = 2
+text = "Temperance"
+label_settings = SubResource("LabelSettings_7obll")
+
+[node name="TemperanceDown" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer4" unique_id=2134833652]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+flip_h = true
+flip_v = true
+
+[node name="TemperanceValue" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer4" unique_id=546319029]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_2go0k")
+horizontal_alignment = 1
+
+[node name="TemperanceUp" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer4" unique_id=1250940154]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="LevelMenuBackground/VBoxContainer" unique_id=2055067412]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Arcane" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer2" unique_id=1882534078]
+layout_mode = 2
+text = "Arcane"
+label_settings = SubResource("LabelSettings_teein")
+
+[node name="ArcaneDown" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer2" unique_id=36354792]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+flip_h = true
+flip_v = true
+
+[node name="ArcaneValue" type="Label" parent="LevelMenuBackground/VBoxContainer/VBoxContainer2" unique_id=2036935203]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_qdp46")
+horizontal_alignment = 1
+
+[node name="ArcaneUp" type="TextureButton" parent="LevelMenuBackground/VBoxContainer/VBoxContainer2" unique_id=612400880]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_408pv")
+texture_pressed = ExtResource("5_pg2tc")
+texture_hover = ExtResource("5_pg2tc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="LevelMenuBackground" unique_id=703888203]
+offset_left = -263.0
+offset_top = 1.9999914
+offset_right = 263.0
+offset_bottom = 111.99999
+theme_override_constants/separation = 4
+
+[node name="CurrentPoints" type="Label" parent="LevelMenuBackground/VBoxContainer2" unique_id=1173692666]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Current points :"
+label_settings = SubResource("LabelSettings_6flmm")
+
+[node name="XPToNextLevel" type="Label" parent="LevelMenuBackground/VBoxContainer2" unique_id=809999848]
+layout_mode = 2
+size_flags_vertical = 6
+text = "XP to next level :"
+label_settings = SubResource("LabelSettings_wxgv2")
+
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer/LuckDown" to="." method="_on_luck_down_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer/LuckUp" to="." method="_on_luck_up_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/HBoxContainer/AttackDown" to="." method="_on_attack_down_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/HBoxContainer/AttackUp" to="." method="_on_attack_up_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer4/TemperanceDown" to="." method="_on_temperance_down_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer4/TemperanceUp" to="." method="_on_temperance_up_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer2/ArcaneDown" to="." method="_on_arcane_down_pressed"]
+[connection signal="pressed" from="LevelMenuBackground/VBoxContainer/VBoxContainer2/ArcaneUp" to="." method="_on_arcane_up_pressed"]

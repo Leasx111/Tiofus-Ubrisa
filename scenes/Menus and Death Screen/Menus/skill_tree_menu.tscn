@@ -1,0 +1,1056 @@
+[gd_scene format=3 uid="uid://bkcxmfr0o6no0"]
+
+[ext_resource type="Script" uid="uid://c7cp406ct8s2a" path="res://scripts/Menus and Death Screen/Skill Tree Menu/skill_button_class.gd" id="1_8lby2"]
+[ext_resource type="Texture2D" uid="uid://cmolykv84f4ed" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/Main_button_icon.png" id="1_w1wgq"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="2_waeqx"]
+[ext_resource type="Texture2D" uid="uid://cngc65gll6m84" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/first_skill_icon.png" id="2_yl6tb"]
+[ext_resource type="Texture2D" uid="uid://cupc86qmdya8e" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/ice_damage_increase_icon.png" id="3_5osdg"]
+[ext_resource type="Texture2D" uid="uid://dyrmhoa14e4xe" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/cooldown_down_icon.png" id="4_rh5li"]
+[ext_resource type="Texture2D" uid="uid://bcamgn3vvacof" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/boiling_blood_icon.png" id="5_0052k"]
+[ext_resource type="Texture2D" uid="uid://b5aa2jovimfg4" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/slow_skill_icon.png" id="6_2cco1"]
+[ext_resource type="Texture2D" uid="uid://c5n6r3co0oqya" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/final_skill_icon.png" id="7_w1wgq"]
+[ext_resource type="Texture2D" uid="uid://bne62w01ke0it" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/viking_final_passive.png" id="8_2cco1"]
+[ext_resource type="Texture2D" uid="uid://ytuv8m1ygs42" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/first_skill.png" id="10_7ktlw"]
+[ext_resource type="Texture2D" uid="uid://btn53sbg7sng1" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/damage_up_icon.png" id="11_5cow1"]
+[ext_resource type="Texture2D" uid="uid://2wampkpmhs8o" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/skill_cooldown_decrease.png" id="12_nlh04"]
+[ext_resource type="Texture2D" uid="uid://cn4vgvdfxstyk" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/combo_attacks_up_icon.png" id="13_j1x3r"]
+[ext_resource type="Texture2D" uid="uid://cdtf50ygq8mrm" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/final_skill_icon.png" id="14_vv7t0"]
+[ext_resource type="Texture2D" uid="uid://ddr2gignu1n5h" path="res://assets/Menus and Death Screen/Skill Tree Menu/Warrior Icons/warrior_final_passive.png" id="15_bucyg"]
+[ext_resource type="Texture2D" uid="uid://dl0uxq5s55l7h" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/First_skill_icon.png" id="16_o4fw0"]
+[ext_resource type="Texture2D" uid="uid://cmo48oohugvs" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/invisible_skill_icon.png" id="17_be7ad"]
+[ext_resource type="Texture2D" uid="uid://c8yx03jpd1se0" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/crit_damage_up.png" id="18_r20qt"]
+[ext_resource type="Texture2D" uid="uid://d34k483gjul7p" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/crit_chance_up_icon.png" id="19_2a00w"]
+[ext_resource type="Texture2D" uid="uid://bpxkdbqjsli41" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/final_skill_icon.png" id="20_ldxuk"]
+[ext_resource type="Texture2D" uid="uid://7c6hfk2n66xl" path="res://assets/Menus and Death Screen/Skill Tree Menu/Rogue icons/rogue_final_passive.png" id="21_j0jtw"]
+[ext_resource type="Texture2D" uid="uid://dukmwedkpl41o" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/first_skill_icon.png" id="22_rdemr"]
+[ext_resource type="Texture2D" uid="uid://dpjq6xdloeb8k" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/skill_use_time_down.png" id="23_bvxws"]
+[ext_resource type="Texture2D" uid="uid://b2tspy0iw2hyr" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/first_skill_buff_icon.png" id="24_0iwcd"]
+[ext_resource type="Texture2D" uid="uid://c6pdpm7l23prf" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/explosion_on_death_icon.png" id="25_7xmmg"]
+[ext_resource type="Texture2D" uid="uid://b8msu3j67um1n" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/weapon_divine_buff_icon.png" id="26_hqijs"]
+[ext_resource type="Texture2D" uid="uid://c30p5v34tixvc" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/final_skill_icon.png" id="27_oypde"]
+[ext_resource type="Texture2D" uid="uid://bpm5pwp43for3" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/paladin_final_passive.png" id="28_hpogp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_66gxo"]
+font = ExtResource("2_waeqx")
+
+[node name="SkillTreeMenu" type="Control" unique_id=1988390575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1878439214]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
+[node name="SkillButton" type="Button" parent="." unique_id=273043541 node_paths=PackedStringArray("skill_description_text")]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 280.0
+offset_right = 592.0
+offset_bottom = 320.0
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+disabled = true
+icon = ExtResource("1_w1wgq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+unlocked = true
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="VikingSkillTree" type="Node2D" parent="." unique_id=788429807]
+
+[node name="SkillButton" type="Button" parent="VikingSkillTree" unique_id=470285848 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+offset_left = 608.0
+offset_top = 240.0
+offset_right = 632.0
+offset_bottom = 264.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+icon = ExtResource("2_yl6tb")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton1")])
+other_path = NodePath("../../WarriorSkillTree/SkillButton")
+other_path1 = NodePath("../../AssassinSkillTree/SkillButton")
+other_path2 = NodePath("../../PaladinSkillTree/SkillButton")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Arice"
+skill_description = "You perform an upward attack that makes ice rise from the ground"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton1" type="Button" parent="VikingSkillTree" unique_id=781726700 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 656.0
+offset_top = 192.0
+offset_right = 680.0
+offset_bottom = 216.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("3_5osdg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton2")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Ice damage up"
+skill_description = "Increases ice damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton2" type="Button" parent="VikingSkillTree" unique_id=541355644 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 704.0
+offset_top = 144.0
+offset_right = 728.0
+offset_bottom = 168.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("4_rh5li")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton3"), NodePath("../SkillButton5"), NodePath("../SkillButton7")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Decrease skill cooldown"
+skill_description = "Decreases skill's cooldown"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton3" type="Button" parent="VikingSkillTree" unique_id=179258947 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 752.0
+offset_top = 96.0
+offset_right = 776.0
+offset_bottom = 120.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("4_rh5li")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton6"), NodePath("../SkillButton4"), NodePath("../SkillButton9")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Decrease skill cooldown"
+skill_description = "decreases skill's cooldowns"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton4" type="Button" parent="VikingSkillTree" unique_id=45043162 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 800.0
+offset_top = 64.0
+offset_right = 824.0
+offset_bottom = 88.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("5_0052k")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton5" type="Button" parent="VikingSkillTree" unique_id=1366700867 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 656.0
+offset_top = 128.0
+offset_right = 680.0
+offset_bottom = 152.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("3_5osdg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Ice damage up"
+skill_description = "Increases ice damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton6" type="Button" parent="VikingSkillTree" unique_id=1973285963 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 720.0
+offset_top = 48.0
+offset_right = 744.0
+offset_bottom = 72.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("3_5osdg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Ice damage up"
+skill_description = "Increases ice damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton7" type="Button" parent="VikingSkillTree" unique_id=1407157990 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 768.0
+offset_top = 208.0
+offset_right = 792.0
+offset_bottom = 232.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("4_rh5li")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton8")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Decrease skill cooldown"
+skill_description = "Decreases skill's cooldowns"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton8" type="Button" parent="VikingSkillTree" unique_id=2044104550 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 816.0
+offset_top = 288.0
+offset_right = 840.0
+offset_bottom = 312.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("6_2cco1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Slow down !"
+skill_description = "Enemies hit by ice element abilities get slowed down"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton9" type="Button" parent="VikingSkillTree" unique_id=1733693435 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 848.0
+offset_top = 144.0
+offset_right = 872.0
+offset_bottom = 168.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("5_0052k")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton10")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton10" type="Button" parent="VikingSkillTree" unique_id=1918334181 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 928.0
+offset_top = 176.0
+offset_right = 952.0
+offset_bottom = 200.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("7_w1wgq")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Watch out !"
+skill_description = "Transform ice in your surrounding in a huge hammer and swing it at your enemies"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="FinalPassive" type="Button" parent="VikingSkillTree" unique_id=1192968209 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 880.0
+offset_top = 240.0
+offset_right = 912.0
+offset_bottom = 272.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("8_2cco1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Viking final passive"
+skill_description = "Damage exponentially increases during viking rage"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="WarriorSkillTree" type="Node2D" parent="." unique_id=1169601556]
+
+[node name="SkillButton" type="Button" parent="WarriorSkillTree" unique_id=1004580028 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+offset_left = 512.0
+offset_top = 240.0
+offset_right = 536.0
+offset_bottom = 264.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+icon = ExtResource("10_7ktlw")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton1"), NodePath("../SkillButton2"), NodePath("../SkillButton3"), NodePath("../SkillButton4")])
+other_path = NodePath("../../VikingSkillTree/SkillButton")
+other_path1 = NodePath("../../AssassinSkillTree/SkillButton")
+other_path2 = NodePath("../../PaladinSkillTree/SkillButton")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton1" type="Button" parent="WarriorSkillTree" unique_id=1983619143 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 464.0
+offset_top = 288.0
+offset_right = 488.0
+offset_bottom = 312.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("11_5cow1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton2" type="Button" parent="WarriorSkillTree" unique_id=301955850 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 560.0
+offset_top = 192.0
+offset_right = 584.0
+offset_bottom = 216.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("12_nlh04")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton3" type="Button" parent="WarriorSkillTree" unique_id=1651417303 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 464.0
+offset_top = 240.0
+offset_right = 488.0
+offset_bottom = 264.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("13_j1x3r")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton5")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton4" type="Button" parent="WarriorSkillTree" unique_id=589974925 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 512.0
+offset_top = 192.0
+offset_right = 536.0
+offset_bottom = 216.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("11_5cow1")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton6")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton5" type="Button" parent="WarriorSkillTree" unique_id=1491577469 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 416.0
+offset_top = 192.0
+offset_right = 440.0
+offset_bottom = 216.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("12_nlh04")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton7")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton6" type="Button" parent="WarriorSkillTree" unique_id=173106727 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 488.0
+offset_bottom = 168.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("12_nlh04")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton8")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton7" type="Button" parent="WarriorSkillTree" unique_id=661596225 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 368.0
+offset_top = 144.0
+offset_right = 392.0
+offset_bottom = 168.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("13_j1x3r")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton9")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton8" type="Button" parent="WarriorSkillTree" unique_id=953588598 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 416.0
+offset_top = 96.0
+offset_right = 440.0
+offset_bottom = 120.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("13_j1x3r")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton10")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton9" type="Button" parent="WarriorSkillTree" unique_id=91461114 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 320.0
+offset_top = 96.0
+offset_right = 344.0
+offset_bottom = 120.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("12_nlh04")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton10" type="Button" parent="WarriorSkillTree" unique_id=844372227 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 368.0
+offset_top = 48.0
+offset_right = 392.0
+offset_bottom = 72.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("14_vv7t0")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="FinalPassive" type="Button" parent="WarriorSkillTree" unique_id=1825418252 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 320.0
+offset_top = 48.0
+offset_right = 352.0
+offset_bottom = 80.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("15_bucyg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="AssassinSkillTree" type="Node2D" parent="." unique_id=1955003926]
+
+[node name="SkillButton" type="Button" parent="AssassinSkillTree" unique_id=980414189 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+offset_left = 512.0
+offset_top = 336.0
+offset_right = 536.0
+offset_bottom = 360.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+icon = ExtResource("16_o4fw0")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton1")])
+other_path = NodePath("../../VikingSkillTree/SkillButton")
+other_path1 = NodePath("../../WarriorSkillTree/SkillButton")
+other_path2 = NodePath("../../PaladinSkillTree/SkillButton")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton1" type="Button" parent="AssassinSkillTree" unique_id=381511296 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 464.0
+offset_top = 384.0
+offset_right = 488.0
+offset_bottom = 408.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("17_be7ad")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton2"), NodePath("../SkillButton3"), NodePath("../SkillButton4"), NodePath("../SkillButton5")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton2" type="Button" parent="AssassinSkillTree" unique_id=1939729686 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 496.0
+offset_top = 416.0
+offset_right = 520.0
+offset_bottom = 440.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("18_r20qt")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton3" type="Button" parent="AssassinSkillTree" unique_id=825451398 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 432.0
+offset_top = 352.0
+offset_right = 456.0
+offset_bottom = 376.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("19_2a00w")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton4" type="Button" parent="AssassinSkillTree" unique_id=1414768498 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 448.0
+offset_top = 432.0
+offset_right = 472.0
+offset_bottom = 456.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("19_2a00w")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton6")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton5" type="Button" parent="AssassinSkillTree" unique_id=1570905536 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 416.0
+offset_top = 400.0
+offset_right = 440.0
+offset_bottom = 424.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("18_r20qt")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton7")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton6" type="Button" parent="AssassinSkillTree" unique_id=959641256 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 416.0
+offset_top = 464.0
+offset_right = 440.0
+offset_bottom = 488.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("17_be7ad")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton8")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton7" type="Button" parent="AssassinSkillTree" unique_id=1918369787 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 384.0
+offset_top = 432.0
+offset_right = 408.0
+offset_bottom = 456.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("19_2a00w")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton9")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton8" type="Button" parent="AssassinSkillTree" unique_id=939243274 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 384.0
+offset_top = 496.0
+offset_right = 408.0
+offset_bottom = 520.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("19_2a00w")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton9" type="Button" parent="AssassinSkillTree" unique_id=1874570259 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 352.0
+offset_top = 464.0
+offset_right = 376.0
+offset_bottom = 488.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("17_be7ad")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton10")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton10" type="Button" parent="AssassinSkillTree" unique_id=422609232 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 344.0
+offset_top = 504.0
+offset_right = 368.0
+offset_bottom = 528.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("20_ldxuk")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="FinalPassive" type="Button" parent="AssassinSkillTree" unique_id=324122157 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 368.0
+offset_top = 540.0
+offset_right = 400.0
+offset_bottom = 572.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("21_j0jtw")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="PaladinSkillTree" type="Node2D" parent="." unique_id=422673882]
+
+[node name="SkillButton" type="Button" parent="PaladinSkillTree" unique_id=1511521144 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+offset_left = 608.0
+offset_top = 336.0
+offset_right = 632.0
+offset_bottom = 360.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+icon = ExtResource("22_rdemr")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton1")])
+other_path = NodePath("../../VikingSkillTree/SkillButton")
+other_path1 = NodePath("../../WarriorSkillTree/SkillButton")
+other_path2 = NodePath("../../AssassinSkillTree/SkillButton")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton1" type="Button" parent="PaladinSkillTree" unique_id=1626199762 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 656.0
+offset_top = 384.0
+offset_right = 680.0
+offset_bottom = 408.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("23_bvxws")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton2")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+metadata/_edit_use_anchors_ = true
+
+[node name="SkillButton2" type="Button" parent="PaladinSkillTree" unique_id=2124897209 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 704.0
+offset_top = 432.0
+offset_right = 728.0
+offset_bottom = 456.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("24_0iwcd")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton3")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton3" type="Button" parent="PaladinSkillTree" unique_id=54289121 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 736.0
+offset_top = 480.0
+offset_right = 760.0
+offset_bottom = 504.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("23_bvxws")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton4")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton4" type="Button" parent="PaladinSkillTree" unique_id=324109632 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 800.0
+offset_top = 480.0
+offset_right = 824.0
+offset_bottom = 504.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("25_7xmmg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton5")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton5" type="Button" parent="PaladinSkillTree" unique_id=389770083 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 864.0
+offset_top = 496.0
+offset_right = 888.0
+offset_bottom = 520.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("23_bvxws")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton6")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton6" type="Button" parent="PaladinSkillTree" unique_id=490595514 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 880.0
+offset_top = 544.0
+offset_right = 904.0
+offset_bottom = 568.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("26_hqijs")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton7")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton7" type="Button" parent="PaladinSkillTree" unique_id=276201814 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 864.0
+offset_top = 592.0
+offset_right = 888.0
+offset_bottom = 616.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("23_bvxws")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton8")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton8" type="Button" parent="PaladinSkillTree" unique_id=11139929 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 800.0
+offset_top = 608.0
+offset_right = 824.0
+offset_bottom = 632.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("27_oypde")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton9")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton9" type="Button" parent="PaladinSkillTree" unique_id=2013822215 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 736.0
+offset_top = 592.0
+offset_right = 760.0
+offset_bottom = 616.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("25_7xmmg")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../SkillButton10")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="SkillButton10" type="Button" parent="PaladinSkillTree" unique_id=950937891 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 720.0
+offset_top = 544.0
+offset_right = 744.0
+offset_bottom = 568.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("23_bvxws")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+next_button = Array[NodePath]([NodePath("../FinalPassive")])
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="FinalPassive" type="Button" parent="PaladinSkillTree" unique_id=1247882383 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 792.0
+offset_top = 536.0
+offset_right = 824.0
+offset_bottom = 568.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.60784316)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+disabled = true
+icon = ExtResource("28_hpogp")
+flat = true
+expand_icon = true
+script = ExtResource("1_8lby2")
+skill_description_text = NodePath("../../Panel/Label")
+skill_name = "Damage Up"
+skill_description = "Increases melee damage by 20%"
+metadata/_custom_type_script = "uid://c7cp406ct8s2a"
+
+[node name="Panel" type="Panel" parent="." unique_id=476499572]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=313266582]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 233.0
+offset_bottom = 633.0
+label_settings = SubResource("LabelSettings_66gxo")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="mouse_entered" from="SkillButton" to="SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SkillButton" to="SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton" to="VikingSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton" to="VikingSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton1" to="VikingSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton1" to="VikingSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton2" to="VikingSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton2" to="VikingSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton3" to="VikingSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton3" to="VikingSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton4" to="VikingSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton4" to="VikingSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton5" to="VikingSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton5" to="VikingSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton6" to="VikingSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton6" to="VikingSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton7" to="VikingSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton7" to="VikingSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton8" to="VikingSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton8" to="VikingSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton9" to="VikingSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton9" to="VikingSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/SkillButton10" to="VikingSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/SkillButton10" to="VikingSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="VikingSkillTree/FinalPassive" to="VikingSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VikingSkillTree/FinalPassive" to="VikingSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton" to="WarriorSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton" to="WarriorSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton1" to="WarriorSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton1" to="WarriorSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton2" to="WarriorSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton2" to="WarriorSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton3" to="WarriorSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton3" to="WarriorSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton4" to="WarriorSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton4" to="WarriorSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton5" to="WarriorSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton5" to="WarriorSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton6" to="WarriorSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton6" to="WarriorSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton7" to="WarriorSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton7" to="WarriorSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton8" to="WarriorSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton8" to="WarriorSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton9" to="WarriorSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton9" to="WarriorSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton10" to="WarriorSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton10" to="WarriorSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="WarriorSkillTree/FinalPassive" to="WarriorSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WarriorSkillTree/FinalPassive" to="WarriorSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton" to="AssassinSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton" to="AssassinSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton1" to="AssassinSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton1" to="AssassinSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton2" to="AssassinSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton2" to="AssassinSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton3" to="AssassinSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton3" to="AssassinSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton4" to="AssassinSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton4" to="AssassinSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton5" to="AssassinSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton5" to="AssassinSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton6" to="AssassinSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton6" to="AssassinSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton7" to="AssassinSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton7" to="AssassinSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton8" to="AssassinSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton8" to="AssassinSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton9" to="AssassinSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton9" to="AssassinSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton10" to="AssassinSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton10" to="AssassinSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AssassinSkillTree/FinalPassive" to="AssassinSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AssassinSkillTree/FinalPassive" to="AssassinSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton" to="PaladinSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton" to="PaladinSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton1" to="PaladinSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton1" to="PaladinSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton2" to="PaladinSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton2" to="PaladinSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton3" to="PaladinSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton3" to="PaladinSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton4" to="PaladinSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton4" to="PaladinSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton5" to="PaladinSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton5" to="PaladinSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton6" to="PaladinSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton6" to="PaladinSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton7" to="PaladinSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton7" to="PaladinSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton8" to="PaladinSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton8" to="PaladinSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton9" to="PaladinSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton9" to="PaladinSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton10" to="PaladinSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton10" to="PaladinSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PaladinSkillTree/FinalPassive" to="PaladinSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaladinSkillTree/FinalPassive" to="PaladinSkillTree/FinalPassive" method="_on_mouse_exited"]

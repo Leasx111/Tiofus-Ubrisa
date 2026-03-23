@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dyflootcf5am3"]
+
+[ext_resource type="Script" uid="uid://qtc3f2q2dghd" path="res://scripts/Menus and Death Screen/Tutorial Menu/tutorial.gd" id="1_41ecp"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="1_qmmws"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_41ecp"]
+font = ExtResource("1_qmmws")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_8h48h"]
+font = ExtResource("1_qmmws")
+
+[node name="Tutorial" type="Control" unique_id=1626270237]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_41ecp")
+
+[node name="TutorialTextBackground" type="ColorRect" parent="." unique_id=1436604021]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
+[node name="TutorialText" type="Label" parent="TutorialTextBackground" unique_id=1870475189]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Welcome to Djofuls Upprisa !
+
+
+Controls :
+
+ \"a\" \"d\" to move ;
+ \"space\" to jump ;
+ \"p\" to attack ;
+ \"esc\" to pause the game ;
+ \"tab\" to open the level-up menu ;
+ \"l\" to open the skill tree menu.
+
+
+this is my first game, a 2D metroidvania with classes, there is no health, as enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
+ "
+label_settings = SubResource("LabelSettings_41ecp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TutorialText2" type="Label" parent="TutorialTextBackground" unique_id=1293820106]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 96.0
+text = "Press \"esc\" to exit
+"
+label_settings = SubResource("LabelSettings_8h48h")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b5t6bnobclnsp"]
+
+[ext_resource type="Script" uid="uid://okqnoorhhwsm" path="res://scripts/Menus and Death Screen/Main Menu/main_menu.gd" id="1_8ln24"]
+[ext_resource type="FontFile" uid="uid://dh1jv0xcurs7t" path="res://assets/Fonts/PixelderFuthark.ttf" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d0n2onfjvq2ca" path="res://assets/Menus and Death Screen/Main Menu/main_menu_background.png" id="1_wu84c"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://wv27g2yt36e8" path="res://assets/Menus and Death Screen/Main Menu/main_menu_text_background.png" id="4_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("1_ekxnf")
+font_size = 180
+font_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.22225618, 2.4215785e-07, 9.62615e-08, 0.19607843)
+
+[node name="MainMenu" type="Control" unique_id=904745671 node_paths=PackedStringArray("new_game_button", "load_button")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ln24")
+new_game_button = NodePath("VBoxContainer/VBoxContainer/NewGame")
+load_button = NodePath("VBoxContainer/VBoxContainer/Load")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1063551577]
+position = Vector2(576, 324)
+texture = ExtResource("1_wu84c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1594616470]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=864729228]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 1
+text = "Djofuls Upprisa"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=7929339]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NewGame" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1579100987]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.5882353)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+icon = ExtResource("4_wu84c")
+flat = true
+icon_alignment = 1
+
+[node name="Load" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1348840182]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.5882353)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Load"
+icon = ExtResource("4_wu84c")
+flat = true
+icon_alignment = 1
+
+[node name="Settings" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1870047474]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.5882353)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+icon = ExtResource("4_wu84c")
+flat = true
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=320062004]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.5882353)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+icon = ExtResource("4_wu84c")
+flat = true
+icon_alignment = 1
+
+[connection signal="button_up" from="VBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="VBoxContainer/VBoxContainer/Load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_button_up"]

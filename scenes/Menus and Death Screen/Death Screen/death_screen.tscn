@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cjrpd2i7pegae"]
+
+[ext_resource type="Script" uid="uid://ceduygysw1s3i" path="res://scripts/Menus and Death Screen/Death Screen/death_screen.gd" id="1_dwo6e"]
+[ext_resource type="Texture2D" uid="uid://bq62h7tx8l5sd" path="res://assets/Menus and Death Screen/Death Screen/text_background.png" id="2_mqh5l"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="3_ahl1s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mqh5l"]
+font = ExtResource("3_ahl1s")
+font_size = 47
+font_color = Color(1, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="DeathScreen" type="Control" unique_id=950630520 node_paths=PackedStringArray("death_text", "background", "text_background")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwo6e")
+death_text = NodePath("AspectRatioContainer/DeathText")
+background = NodePath("Background")
+text_background = NodePath("AspectRatioContainer/TextBackground")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1613333601]
+modulate = Color(1, 1, 1, 0.003921569)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=857354737]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="DeathText" type="Label" parent="AspectRatioContainer" unique_id=1303213789]
+modulate = Color(1, 1, 1, 0.003921569)
+layout_mode = 2
+text = "YOU SUCCUMBED TO THE VIKINGS"
+label_settings = SubResource("LabelSettings_mqh5l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBackground" type="Sprite2D" parent="AspectRatioContainer" unique_id=77385926]
+modulate = Color(1, 1, 1, 0.003921569)
+z_index = 1
+position = Vector2(576, 324)
+texture = ExtResource("2_mqh5l")
