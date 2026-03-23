@@ -12,6 +12,7 @@ class_name Player
 @export var roomloader : RoomLoader
 @export var viking_rage_screen : ColorRect
 @export var level_menu : LevelMenu
+@export var tutorial: TutorialMenu
 @export var skill_tree_menu : Control
 @export var exit_menu : ExitMenu
 @export var player_sprite : Sprite2D
@@ -390,8 +391,6 @@ func _input(event: InputEvent) -> void :
 			
 			state = States.first_attack
 	
-	if event.is_action_released("toggle_skill_tree") and state != States.dead :
-		
-		var skill_tree_camera = skill_tree_menu.get_node("Camera2D")
+	if event.is_action_released("toggle_skill_tree") and tutorial.visible == false and state != States.dead :
 		
 		skill_tree_menu.visible = not skill_tree_menu.visible

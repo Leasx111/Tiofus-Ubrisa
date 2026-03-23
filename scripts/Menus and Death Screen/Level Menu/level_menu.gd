@@ -3,7 +3,8 @@ extends Control
 class_name LevelMenu
 
 # Object instances
-@export var player : Player 
+@export var player : Player
+@export var tutorial: TutorialMenu
 @export var luck_value: Label
 @export var attack_value: Label
 @export var temperance_value: Label
@@ -97,6 +98,6 @@ func update_text() :
 
 func _input(event: InputEvent) -> void :
 	
-	if event.is_action_released("toggle_level_menu") and player.state != player.States.dead :
+	if event.is_action_released("toggle_level_menu") and tutorial.visible == false and player.state != player.States.dead :
 		
 		visible = not visible

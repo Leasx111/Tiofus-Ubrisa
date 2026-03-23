@@ -4,13 +4,22 @@ func _ready() -> void:
 	
 	for i in 4 : 
 		
-		if FileAccess.file_exists("user://test_data" + str(i) + ".tres") :
-			
-			var button_string : String = "VBoxContainer/LoadButton" + str(i)
-			
-			var button_node : Node = get_node(button_string)
-			
-			SaveData.player_data = ResourceLoader.load("user://test_data" + str(i) + ".tres")
+		update_img(i,false)
+		
+		i += 1
+
+
+func update_img(i : int, delete : bool) :
+	
+	if FileAccess.file_exists("user://test_data" + str(i) + ".tres") :
+		
+		var button_string : String = "VBoxContainer/LoadButton" + str(i)
+		
+		var button_node : Node = get_node(button_string)
+		
+		SaveData.player_data = ResourceLoader.load("user://test_data" + str(i) + ".tres")
+		
+		if SaveData.player_data.last_checkpoint_image :
 			
 			var imag = SaveData.player_data.last_checkpoint_image
 			
@@ -18,7 +27,20 @@ func _ready() -> void:
 			
 			button_node.get_child(0).text = "current level : " + str(SaveData.player_data.level)
 		
-		i += 1
+		else :
+			
+			var imag = load("res://assets/Menus and Death Screen/Load Menu/save_image_test.png")
+			
+			button_node.get_child(1).texture = imag
+			
+			button_node.get_child(0).text = "current level : " + str(SaveData.player_data.level)
+			
+		
+		if delete == true :
+			
+			button_node.get_child(1).texture = null
+			
+			button_node.get_child(0).text = ""
 
 
 func _on_button_button_up() -> void:
@@ -74,19 +96,27 @@ func _on_load_button_3_button_up() -> void:
 
 func _on_delete_button_0_button_up() -> void:
 	
+	update_img(0, true)
+	
 	DirAccess.remove_absolute("user://test_data0.tres")
 
 
 func _on_delete_button_1_button_up() -> void:
+	
+	update_img(1, true)
 	
 	DirAccess.remove_absolute("user://test_data1.tres")
 
 
 func _on_delete_button_2_button_up() -> void:
 	
+	update_img(2, true)
+	
 	DirAccess.remove_absolute("user://test_data2.tres")
 
 
 func _on_delete_button_3_button_up() -> void:
+	
+	update_img(3, true)
 	
 	DirAccess.remove_absolute("user://test_data3.tres")

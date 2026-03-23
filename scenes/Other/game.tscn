@@ -29,16 +29,16 @@ player = NodePath("../Player")
 
 [node name="CurrentRoom" type="Node" parent="RoomLoader" unique_id=87175111]
 
-[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "level_menu", "skill_tree_menu", "exit_menu", "player_camera") instance=ExtResource("1_yqjtg")]
+[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "level_menu", "tutorial", "skill_tree_menu", "exit_menu") instance=ExtResource("1_yqjtg")]
 player_exp = NodePath("CanvasLayer/PlayerExp")
 death_screen = NodePath("CanvasLayer/DeathScreen")
 room_transition = NodePath("CanvasLayer/RoomTransition")
 roomloader = NodePath("../RoomLoader")
 viking_rage_screen = NodePath("CanvasLayer/VikingRage")
 level_menu = NodePath("CanvasLayer/LevelMenu")
+tutorial = NodePath("../CanvasLayer/Tutorial")
 skill_tree_menu = NodePath("CanvasLayer/SkillTreeMenu")
 exit_menu = NodePath("CanvasLayer/ExitMenu")
-player_camera = NodePath("Camera")
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=122080715]
 process_mode = 3
@@ -68,7 +68,7 @@ player = NodePath("../..")
 exit_menu = NodePath("../ExitMenu")
 level_menu = NodePath("../LevelMenu")
 
-[node name="LevelMenu" parent="Player/CanvasLayer" unique_id=1065140838 node_paths=PackedStringArray("player") instance=ExtResource("3_u5sy4")]
+[node name="LevelMenu" parent="Player/CanvasLayer" unique_id=1065140838 node_paths=PackedStringArray("player", "tutorial") instance=ExtResource("3_u5sy4")]
 visible = false
 modulate = Color(1, 1, 1, 0.78431374)
 z_index = 5
@@ -81,6 +81,7 @@ offset_top = 0.3199997
 offset_right = -281.17603
 offset_bottom = -299.72803
 player = NodePath("../..")
+tutorial = NodePath("../../../CanvasLayer/Tutorial")
 
 [node name="RoomTransition" type="ColorRect" parent="Player/CanvasLayer" unique_id=711490188]
 process_mode = 3
@@ -141,6 +142,10 @@ z_index = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1624551238]
 layer = 2
 
-[node name="Tutorial" parent="CanvasLayer" unique_id=1626270237 instance=ExtResource("13_ugoi2")]
+[node name="Tutorial" parent="CanvasLayer" unique_id=1626270237 node_paths=PackedStringArray("player", "skill_tree_menu", "level_menu", "exit_menu") instance=ExtResource("13_ugoi2")]
 visible = false
 modulate = Color(1, 1, 1, 0.4)
+player = NodePath("../../Player")
+skill_tree_menu = NodePath("../../Player/CanvasLayer/SkillTreeMenu")
+level_menu = NodePath("../../Player/CanvasLayer/LevelMenu")
+exit_menu = NodePath("../../Player/CanvasLayer/ExitMenu")
