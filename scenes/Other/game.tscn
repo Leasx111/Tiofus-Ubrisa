@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://crw6wkk478mg" path="res://scenes/Menus and Death Screen/Menus/level_menu.tscn" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dblgjxm2j3jc2" path="res://scenes/Menus and Death Screen/Menus/exit_menu.tscn" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cjrpd2i7pegae" path="res://scenes/Menus and Death Screen/Death Screen/death_screen.tscn" id="4_gee14"]
-[ext_resource type="Script" uid="uid://b1rxdglcf1awc" path="res://scripts/Menus and Death Screen/Skill Tree Menu/camera.gd" id="5_ith2t"]
 [ext_resource type="Script" uid="uid://k5jlm5rd5ury" path="res://scripts/Room and Save System/room_transition.gd" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://d1n5t1na86412" path="res://assets/Characters/Player/Exp bar/under.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://djdhf1eje800r" path="res://assets/Characters/Player/Exp bar/over.png" id="8_dinhu"]
@@ -30,7 +29,7 @@ player = NodePath("../Player")
 
 [node name="CurrentRoom" type="Node" parent="RoomLoader" unique_id=87175111]
 
-[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "level_menu", "skill_tree_menu", "exit_menu") instance=ExtResource("1_yqjtg")]
+[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "level_menu", "skill_tree_menu", "exit_menu", "player_camera") instance=ExtResource("1_yqjtg")]
 player_exp = NodePath("CanvasLayer/PlayerExp")
 death_screen = NodePath("CanvasLayer/DeathScreen")
 room_transition = NodePath("CanvasLayer/RoomTransition")
@@ -39,6 +38,7 @@ viking_rage_screen = NodePath("CanvasLayer/VikingRage")
 level_menu = NodePath("CanvasLayer/LevelMenu")
 skill_tree_menu = NodePath("CanvasLayer/SkillTreeMenu")
 exit_menu = NodePath("CanvasLayer/ExitMenu")
+player_camera = NodePath("Camera")
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=122080715]
 process_mode = 3
@@ -49,7 +49,6 @@ limit_top = -320
 limit_right = 592
 limit_bottom = 328
 limit_smoothed = true
-script = ExtResource("5_ith2t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1679689125]
 
