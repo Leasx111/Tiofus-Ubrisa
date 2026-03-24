@@ -29,7 +29,7 @@ color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Welcome to Djofuls Upprisa !
+text = "Welcome to djofuls Upprisa !
 
 
 Controls :
@@ -42,7 +42,7 @@ Controls :
  \"l\" to open the skill tree menu.
 
 
-this is my first game, a 2D metroidvania with classes, there is no health, as enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
+this is my first game, a 2d metroidvania with classes, there is no health, as enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
  "
 label_settings = SubResource("LabelSettings_41ecp")
 horizontal_alignment = 1
