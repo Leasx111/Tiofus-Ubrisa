@@ -2,8 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cbjgq1pifgi0q" path="res://assets/Menus and Death Screen/Settings Menu/setting_menu_background.png" id="1_15pxr"]
 [ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="1_ay1y4"]
+[ext_resource type="Script" uid="uid://dp6gywlygmqtp" path="res://scenes/Menus and Death Screen/Menus/settings_menu.gd" id="1_eduwh"]
 [ext_resource type="Texture2D" uid="uid://bh1lg2xoxjmr1" path="res://assets/Menus and Death Screen/Settings Menu/runes_checked.png" id="2_15pxr"]
 [ext_resource type="Texture2D" uid="uid://onnqv5l0ftaa" path="res://assets/Menus and Death Screen/Settings Menu/runes_unchecked.png" id="3_eduwh"]
+
+[sub_resource type="Environment" id="Environment_15pxr"]
+background_mode = 3
+adjustment_enabled = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_152rs"]
 font = ExtResource("1_ay1y4")
@@ -13,13 +18,20 @@ font_size = 64
 font = ExtResource("1_ay1y4")
 font_size = 32
 
-[node name="SettingsMenu" type="Control" unique_id=963175924]
+[node name="SettingsMenu" type="Control" unique_id=963175924 node_paths=PackedStringArray("world_environment", "brightness_slider", "master_sound_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eduwh")
+world_environment = NodePath("WorldEnvironment")
+brightness_slider = NodePath("VBoxContainer/Brightness/BrightnessSlider")
+master_sound_slider = NodePath("VBoxContainer/MasterSound/MasterSoundSlider")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=235240012]
+environment = SubResource("Environment_15pxr")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1755745129]
 position = Vector2(576, 324)
@@ -34,6 +46,18 @@ text = "settings"
 label_settings = SubResource("LabelSettings_152rs")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1124436847]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("1_ay1y4")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=67318909]
 layout_mode = 0
@@ -55,9 +79,12 @@ offset_left = 436.0
 offset_top = 14.0
 offset_right = 796.0
 offset_bottom = 30.0
+max_value = 200.0
 step = 25.0
+value = 100.0
 rounded = true
-tick_count = 5
+scrollable = false
+tick_count = 9
 ticks_position = 3
 
 [node name="MasterSound" type="Label" parent="VBoxContainer" unique_id=971711625]
@@ -74,8 +101,9 @@ offset_top = 14.0
 offset_right = 796.0
 offset_bottom = 30.0
 step = 25.0
+value = 100.0
 rounded = true
-tick_count = 5
+tick_count = 9
 ticks_position = 3
 
 [node name="Difficulty" type="Label" parent="VBoxContainer" unique_id=259712207]
@@ -111,3 +139,7 @@ offset_right = 654.0
 offset_bottom = 54.0
 theme_override_icons/checked = ExtResource("2_15pxr")
 theme_override_icons/unchecked = ExtResource("3_eduwh")
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="value_changed" from="VBoxContainer/Brightness/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MasterSound/MasterSoundSlider" to="." method="_on_master_sound_slider_value_changed"]

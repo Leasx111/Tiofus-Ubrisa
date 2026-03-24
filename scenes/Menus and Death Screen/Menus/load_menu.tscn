@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://dycwng1w6evg0" path="res://assets/Menus and Death Screen/Load Menu/load_button_hovered.png" id="3_jkfef"]
 [ext_resource type="Texture2D" uid="uid://c4k6d7y08hf22" path="res://assets/Menus and Death Screen/Load Menu/delete_save_icon.png" id="8_rdkta"]
 
+[sub_resource type="Environment" id="Environment_ucjdt"]
+background_mode = 3
+adjustment_enabled = true
+
 [sub_resource type="LabelSettings" id="LabelSettings_ucjdt"]
 font = ExtResource("1_1s0xb")
 
-[node name="LoadMenu" type="Control" unique_id=1128067260]
+[node name="LoadMenu" type="Control" unique_id=1128067260 node_paths=PackedStringArray("world_environment")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +23,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wk6rr")
+world_environment = NodePath("WorldEnvironment")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1832339910]
+environment = SubResource("Environment_ucjdt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2072303239]
 position = Vector2(576, 324)

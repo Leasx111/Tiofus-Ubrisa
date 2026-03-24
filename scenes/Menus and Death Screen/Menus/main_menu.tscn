@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://wv27g2yt36e8" path="res://assets/Menus and Death Screen/Main Menu/main_menu_text_background.png" id="4_wu84c"]
 
+[sub_resource type="Environment" id="Environment_qncig"]
+background_mode = 3
+adjustment_enabled = true
+
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font = ExtResource("1_ekxnf")
 font_size = 180
@@ -13,7 +17,7 @@ font_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0.22225618, 2.4215785e-07, 9.62615e-08, 0.19607843)
 
-[node name="MainMenu" type="Control" unique_id=904745671 node_paths=PackedStringArray("new_game_button", "load_button")]
+[node name="MainMenu" type="Control" unique_id=904745671 node_paths=PackedStringArray("world_environment", "new_game_button", "load_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -22,8 +26,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ln24")
+world_environment = NodePath("WorldEnvironment")
 new_game_button = NodePath("VBoxContainer/VBoxContainer/NewGame")
 load_button = NodePath("VBoxContainer/VBoxContainer/Load")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=772530754]
+environment = SubResource("Environment_qncig")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1063551577]
 position = Vector2(576, 324)

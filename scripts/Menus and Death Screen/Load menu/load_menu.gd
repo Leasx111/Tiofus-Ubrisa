@@ -1,6 +1,10 @@
 extends Control
 
+@export var world_environment: WorldEnvironment
+
 func _ready() -> void: 
+	
+	world_environment.environment.adjustment_brightness = SaveData.brightness / 100
 	
 	for i in 4 : 
 		

@@ -1,10 +1,14 @@
 extends Control
 
+@export var world_environment: WorldEnvironment
+
 @export var new_game_button: Button
 @export var load_button: Button 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void :
+	
+	world_environment.environment.adjustment_brightness = SaveData.brightness / 100
 	
 	SaveData.calc_files()
 	
@@ -51,7 +55,7 @@ func _on_load_button_up() -> void :
 
 func _on_settings_button_up() -> void :
 	
-	pass 
+	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/settings_menu.tscn")
 
 func _on_exit_button_up() -> void:
 	
