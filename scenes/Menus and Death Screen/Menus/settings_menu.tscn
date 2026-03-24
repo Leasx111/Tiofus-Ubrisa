@@ -18,7 +18,11 @@ font_size = 64
 font = ExtResource("1_ay1y4")
 font_size = 32
 
-[node name="SettingsMenu" type="Control" unique_id=963175924 node_paths=PackedStringArray("world_environment", "brightness_slider", "master_sound_slider")]
+[sub_resource type="LabelSettings" id="LabelSettings_eduwh"]
+font = ExtResource("1_ay1y4")
+font_size = 27
+
+[node name="SettingsMenu" type="Control" unique_id=963175924 node_paths=PackedStringArray("world_environment", "brightness_slider", "master_sound_slider", "label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +33,7 @@ script = ExtResource("1_eduwh")
 world_environment = NodePath("WorldEnvironment")
 brightness_slider = NodePath("VBoxContainer/Brightness/BrightnessSlider")
 master_sound_slider = NodePath("VBoxContainer/MasterSound/MasterSoundSlider")
+label = NodePath("VBoxContainer/Label")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=235240012]
 environment = SubResource("Environment_15pxr")
@@ -61,9 +66,9 @@ flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=67318909]
 layout_mode = 0
-offset_left = 83.0
+offset_left = 76.0
 offset_top = 200.0
-offset_right = 1020.0
+offset_right = 1076.0
 offset_bottom = 588.0
 
 [node name="Brightness" type="Label" parent="VBoxContainer" unique_id=955617422]
@@ -88,6 +93,7 @@ tick_count = 9
 ticks_position = 3
 
 [node name="MasterSound" type="Label" parent="VBoxContainer" unique_id=971711625]
+visible = false
 layout_mode = 2
 size_flags_vertical = 6
 text = "master sound :"
@@ -119,12 +125,14 @@ offset_left = 436.0
 offset_top = 14.0
 offset_right = 796.0
 offset_bottom = 30.0
-step = 25.0
+step = 50.0
+value = 100.0
 rounded = true
-tick_count = 5
+tick_count = 3
 ticks_position = 3
 
 [node name="Runic" type="Label" parent="VBoxContainer" unique_id=837619365]
+visible = false
 layout_mode = 2
 size_flags_vertical = 6
 text = "runic :"
@@ -140,6 +148,13 @@ offset_bottom = 54.0
 theme_override_icons/checked = ExtResource("2_15pxr")
 theme_override_icons/unchecked = ExtResource("3_eduwh")
 
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=129985219]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_eduwh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="value_changed" from="VBoxContainer/Brightness/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MasterSound/MasterSoundSlider" to="." method="_on_master_sound_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Difficulty/DifficultySlider" to="." method="_on_difficulty_slider_value_changed"]

@@ -12,7 +12,7 @@ class_name Game
 
 func _ready() -> void :
 	
-	world_environment.environment.adjustment_brightness = SaveData.brightness / 100
+	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	await roomloader.change_room(first_room, "spawn_left")
 	

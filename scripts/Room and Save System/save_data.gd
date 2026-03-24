@@ -2,9 +2,7 @@ extends Node
 
 var player_data : PlayerData = PlayerData.new() 
 
-var brightness : float = 100.00
-
-var master_sound : float = 100.00
+var settings : Settings = Settings.new()
 
 var current_data : int = 0
 

@@ -8,7 +8,11 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void :
 	
-	world_environment.environment.adjustment_brightness = SaveData.brightness / 100
+	if FileAccess.file_exists("user://settings.tres") :
+		
+		SaveData.settings = ResourceLoader.load("user://settings.tres")
+	
+	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	SaveData.calc_files()
 	
