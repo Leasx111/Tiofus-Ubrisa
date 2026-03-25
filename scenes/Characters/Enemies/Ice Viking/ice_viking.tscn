@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://bxgmr0406vpfa"]
+[gd_scene format=3 uid="uid://8byyvr3hyupx"]
 
-[ext_resource type="Script" uid="uid://b4vrk8geao3i5" path="res://scripts/Charactes/Enemies/Base Viking/base_viking.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://d1awjbcfkxrco" path="res://assets/Characters/Enemies/Base Viking/Viking-Sheet.png" id="2_4ra3w"]
-[ext_resource type="Texture2D" uid="uid://ivgoja3d7xgj" path="res://assets/Characters/Enemies/Health bar/health_under.png" id="3_3v4uw"]
-[ext_resource type="Texture2D" uid="uid://djdhf1eje800r" path="res://assets/Characters/Player/Exp bar/over.png" id="4_mlca2"]
-[ext_resource type="Texture2D" uid="uid://cige5jgy76yx" path="res://assets/Characters/Enemies/Health bar/health_progress.png" id="5_wgwi5"]
+[ext_resource type="Script" uid="uid://b4vrk8geao3i5" path="res://scripts/Charactes/Enemies/Base Viking/base_viking.gd" id="1_viegm"]
+[ext_resource type="Texture2D" uid="uid://cauj8ciukuheq" path="res://assets/Characters/Enemies/Ice Viking/Viking(Ice Axe)-Sheet.png" id="2_4tf8g"]
+[ext_resource type="Texture2D" uid="uid://ivgoja3d7xgj" path="res://assets/Characters/Enemies/Health bar/health_under.png" id="3_4m518"]
+[ext_resource type="Texture2D" uid="uid://djdhf1eje800r" path="res://assets/Characters/Player/Exp bar/over.png" id="4_yfj4t"]
+[ext_resource type="Texture2D" uid="uid://cige5jgy76yx" path="res://assets/Characters/Enemies/Health bar/health_progress.png" id="5_6chv5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_md0e3"]
 radius = 5.0
@@ -75,7 +75,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [104, 105, 106, 107, 117, 118, 119, 120]
+"values": [96, 97, 98, 99, 108, 109, 110, 111]
 }
 
 [sub_resource type="Animation" id="Animation_7p1mj"]
@@ -92,7 +92,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+"values": [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -122,12 +122,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [80, 91]
+"values": [74, 84]
 }
 
 [sub_resource type="Animation" id="Animation_5uy6h"]
 resource_name = "hit"
-length = 0.6
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -139,7 +139,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [39, 40, 41, 42]
+"values": [36, 37, 38, 39]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -174,7 +174,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xwavj"]
 resource_name = "run"
-length = 0.6
+length = 0.8
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -187,7 +187,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [26, 27, 28, 29, 30, 31, 32, 33]
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nenq2"]
@@ -214,7 +214,8 @@ radius = 9.0
 height = 52.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=553816022 node_paths=PackedStringArray("enemy_sprite", "enemy_collision", "enemy_area", "enemy_attack_area", "enemy_aggro_area", "vulnerability_timer", "enemy_health", "animation_player") groups=["enemy_attack", "hurtbox"]]
-script = ExtResource("1_md0e3")
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_viegm")
 enemy_sprite = NodePath("EnemySprite")
 enemy_collision = NodePath("EnemyCollision")
 enemy_area = NodePath("EnemyArea/EnemyShape")
@@ -223,19 +224,19 @@ enemy_aggro_area = NodePath("AttackPlayerArea/PlayerAggroShape")
 vulnerability_timer = NodePath("VulnerabilityTimer")
 enemy_health = NodePath("EnemyHealth")
 animation_player = NodePath("AnimationPlayer")
-health = 100
-xp = 100
+health = 500
+xp = 1000
 
 [node name="EnemySprite" type="Sprite2D" parent="." unique_id=958056666]
 z_index = 1
 position = Vector2(1, 1)
-texture = ExtResource("2_4ra3w")
-hframes = 13
+texture = ExtResource("2_4tf8g")
+hframes = 12
 vframes = 24
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="." unique_id=1881769884 groups=["hurtbox"]]
 z_index = 2
-position = Vector2(0, 3.75)
+position = Vector2(0, 6.94149)
 shape = SubResource("CapsuleShape2D_md0e3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1956484311]
@@ -279,14 +280,15 @@ offset_left = -16.0
 offset_top = -25.0
 offset_right = 16.0
 offset_bottom = -20.0
-value = 100.0
+max_value = 500.0
+value = 500.0
 rounded = true
 nine_patch_stretch = true
 stretch_margin_top = 1
 stretch_margin_bottom = 1
-texture_under = ExtResource("3_3v4uw")
-texture_over = ExtResource("4_mlca2")
-texture_progress = ExtResource("5_wgwi5")
+texture_under = ExtResource("3_4m518")
+texture_over = ExtResource("4_yfj4t")
+texture_progress = ExtResource("5_6chv5")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="AttackPlayerArea" to="." method="_on_area_2d_2_area_entered"]

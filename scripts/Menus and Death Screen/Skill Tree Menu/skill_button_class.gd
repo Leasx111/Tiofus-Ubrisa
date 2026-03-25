@@ -19,7 +19,7 @@ class_name SkillButton
 func _pressed() -> void :
 	
 	
-	if SaveData.player_data.level_up_points > 0 :
+	if SaveData.player_data.skill_points > 0 :
 		
 		unlocked = true
 		
@@ -45,7 +45,7 @@ func _pressed() -> void :
 		
 		SaveData.player_data.unlocked_skills.push_back(skill_name)
 		
-		SaveData.player_data.level_up_points -= 1
+		SaveData.player_data.skill_points -= 1
 	
 	else :
 		

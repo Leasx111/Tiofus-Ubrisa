@@ -10,9 +10,9 @@ class_name Enemy
 @export var vulnerability_timer : Timer
 @export var enemy_health : TextureProgressBar
 @export var animation_player : AnimationPlayer
-@export var on_screen_notifier : VisibleOnScreenNotifier2D
 
 @export var health : int
+@export var xp : int
 
 @onready var player : Player = $"/root/Game/Player"
 
@@ -34,14 +34,6 @@ func _physics_process(delta: float) -> void :
 		direction = (player.global_position - self.global_position).normalized()
 		
 		pos = (player.position - self.position)
-		
-		if pos.x <= 128 and pos.x >= - 128 :
-			
-			enemy_health.visible = true
-		
-		else :
-			
-			enemy_health.visible = false
 		
 		if vulnerability_timer.is_stopped() :
 			
@@ -82,6 +74,14 @@ func _physics_process(delta: float) -> void :
 			if is_on_floor() :
 				
 				velocity.x = 0
+		
+		if not (pos.x <= 564 and pos.x >= - 564) :
+			
+			on_screen = false
+			
+			enemy_health.visible = false
+			
+			state = States.idle
 		
 		move_and_slide()
 
@@ -134,7 +134,7 @@ func die() -> void :
 	
 	state = States.dead
 	
-	self.player.emit_signal("enemy_killed")
+	self.player.emit_signal("enemy_killed", xp)
 
 func flip_sprite(facing : String) -> void :
 	
@@ -155,14 +155,6 @@ func flip_sprite(facing : String) -> void :
 		enemy_attack_area.position.x = abs(enemy_attack_area.position.x) * -1
 		enemy_collision.position.x = abs(enemy_collision.position.x) *  1
 		enemy_area.position.x = abs(enemy_area.position.x) *  1
-
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void :
-	
-	on_screen = true
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void :
-	
-	on_screen = false
 
 func _on_area_2d_2_area_entered(area : Area2D) -> void :
 	
@@ -201,3 +193,12 @@ func _on_animation_player_animation_finished(anim_name : StringName) -> void :
 	elif anim_name == "death" :
 		
 		queue_free()
+
+
+func _on_player_aggro_area_2_area_entered(area: Area2D) -> void :
+	
+	if area.is_in_group("player") :
+		
+		on_screen = true
+		
+		enemy_health.visible = true

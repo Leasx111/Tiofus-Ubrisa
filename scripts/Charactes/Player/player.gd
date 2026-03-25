@@ -247,11 +247,11 @@ func flip_sprite(facing : String) -> void :
 		player_collision_shape.position.x = abs(player_collision_shape.position.x) * 1
 		player_area.position.x = abs(player_area.position.x) * 1
 
-func gain_exp() -> void :
+func gain_exp(xp : int) -> void :
 	
 	var tween_increase_value = get_tree().create_tween()
 	
-	tween_increase_value.tween_property(player_exp, "value", player_exp.value + 100, 1)
+	tween_increase_value.tween_property(player_exp, "value", player_exp.value + xp, 1)
 	
 	await tween_increase_value.finished
 	
@@ -261,18 +261,22 @@ func gain_exp() -> void :
 		
 		tween_value.tween_property(player_exp, "value", player_exp.value - player_exp.max_value, 0.2)
 		
+		await  tween_value.finished
+		
 		SaveData.player_data.max_XP = player_exp.max_value * 1.25
 		
 		player_exp.max_value = SaveData.player_data.max_XP
 		
-		await  tween_value.finished
-		
-		@warning_ignore("narrowing_conversion")
-		SaveData.player_data.current_xp = player_exp.value
-		
 		SaveData.player_data.level += 1
 		
 		SaveData.player_data.level_up_points += 1
+		
+		if SaveData.player_data.level % 10 == 0 :
+			
+			SaveData.player_data.skill_points += 1
+	
+	@warning_ignore("narrowing_conversion")
+	SaveData.player_data.current_xp = player_exp.value
 
 func _on_animation_player_animation_finished(anim_name : StringName) -> void :
 	
@@ -343,13 +347,13 @@ func _on_load_requested() -> void :
 		
 		SaveData.player_data = ResourceLoader.load("user://test_data" + str(SaveData.current_data) + ".tres")
 
-func _on_enemy_killed() -> void :
+func _on_enemy_killed(xp : int) -> void :
 	
 	viking_rage_timer.stop()
 	
 	viking_rage_screen.visible = false
 	
-	gain_exp()
+	gain_exp(xp)
 
 func _on_invincibility_timer_timeout() -> void:
 	

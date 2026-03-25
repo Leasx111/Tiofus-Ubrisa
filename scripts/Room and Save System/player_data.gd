@@ -5,7 +5,9 @@ class_name  PlayerData
 @export
 var level : int = 1 
 @export
-var level_up_points : int = 10
+var level_up_points : int = 0
+@export
+var skill_points : int = 0
 @export
 var max_viking_rage : int = 1
 @export

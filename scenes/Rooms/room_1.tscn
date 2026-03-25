@@ -6125,10 +6125,18 @@ position = Vector2(-470, 0)
 position = Vector2(530, 0)
 
 [node name="Enemy" parent="." unique_id=553816022 instance=ExtResource("3_cf6fw")]
-position = Vector2(312, -24)
+position = Vector2(301, -24)
+
+[node name="Enemy2" parent="." unique_id=1523939818 instance=ExtResource("3_cf6fw")]
+position = Vector2(343, -24)
+
+[node name="EnemySprite" parent="Enemy2" index="0" unique_id=958056666]
+flip_h = true
 
 [node name="1rst checkpoint" parent="." unique_id=817744407 instance=ExtResource("4_xgo8u")]
 position = Vector2(0, -11)
 save_image = ExtResource("6_4pyy6")
 
 [connection signal="area_entered" from="right_door/Area2D" to="right_door" method="_on_area_2d_area_entered"]
+
+[editable path="Enemy2"]

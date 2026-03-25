@@ -86,8 +86,10 @@ func _on_arcane_down_pressed() -> void :
 # Update text
 func update_text() : 
 	
-	@warning_ignore("narrowing_conversion")
-	SaveData.player_data.XP_to_next_level = player.player_exp.max_value - player.player_exp.value
+	if (player.player_exp.max_value - player.player_exp.value) >= 0 :
+		
+		@warning_ignore("narrowing_conversion")
+		SaveData.player_data.XP_to_next_level = player.player_exp.max_value - player.player_exp.value
 	
 	luck_value.text = str(SaveData.player_data.luck)
 	attack_value.text = str(SaveData.player_data.attack)
