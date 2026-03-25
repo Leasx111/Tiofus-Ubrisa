@@ -4,6 +4,7 @@ class_name ExitMenu
 
 @export var level_menu : LevelMenu
 @export var tutorial: TutorialMenu
+@export var skill_tree_menu: Control
 @export var player : Player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +20,7 @@ func _on_exit_pressed() -> void:
 
 func _input(event: InputEvent) -> void : 
 	
-	if event.is_action_released("toggle_exit_menu") and not level_menu.visible and not tutorial.visible and player.state != player.States.dead :
+	if event.is_action_released("toggle_exit_menu") and not level_menu.visible and not skill_tree_menu.visible and not tutorial.visible and player.state != player.States.dead :
 		
 		visible = not visible
 		

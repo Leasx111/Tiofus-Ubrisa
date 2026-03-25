@@ -61,13 +61,14 @@ limit_smoothed = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1679689125]
 
-[node name="ExitMenu" parent="Player/CanvasLayer" unique_id=35507965 node_paths=PackedStringArray("level_menu", "tutorial", "player") instance=ExtResource("4_0tnpc")]
+[node name="ExitMenu" parent="Player/CanvasLayer" unique_id=35507965 node_paths=PackedStringArray("level_menu", "tutorial", "skill_tree_menu", "player") instance=ExtResource("4_0tnpc")]
 visible = false
 z_index = 5
 anchor_bottom = 0.99700004
 offset_bottom = -322.05603
 level_menu = NodePath("../LevelMenu")
 tutorial = NodePath("../../../CanvasLayer/Tutorial")
+skill_tree_menu = NodePath("../SkillTreeMenu")
 player = NodePath("../..")
 
 [node name="DeathScreen" parent="Player/CanvasLayer" unique_id=950630520 node_paths=PackedStringArray("player", "exit_menu", "level_menu") instance=ExtResource("4_gee14")]
@@ -77,7 +78,7 @@ player = NodePath("../..")
 exit_menu = NodePath("../ExitMenu")
 level_menu = NodePath("../LevelMenu")
 
-[node name="LevelMenu" parent="Player/CanvasLayer" unique_id=1065140838 node_paths=PackedStringArray("player", "tutorial") instance=ExtResource("3_u5sy4")]
+[node name="LevelMenu" parent="Player/CanvasLayer" unique_id=1065140838 node_paths=PackedStringArray("player", "tutorial", "skill_tree_menu") instance=ExtResource("3_u5sy4")]
 visible = false
 modulate = Color(1, 1, 1, 0.78431374)
 z_index = 5
@@ -91,6 +92,7 @@ offset_right = -281.17603
 offset_bottom = -299.72803
 player = NodePath("../..")
 tutorial = NodePath("../../../CanvasLayer/Tutorial")
+skill_tree_menu = NodePath("../SkillTreeMenu")
 
 [node name="RoomTransition" type="ColorRect" parent="Player/CanvasLayer" unique_id=711490188]
 process_mode = 3

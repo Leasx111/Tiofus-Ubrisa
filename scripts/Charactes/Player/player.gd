@@ -385,6 +385,6 @@ func _input(event: InputEvent) -> void :
 			
 			state = States.first_attack
 	
-	if event.is_action_released("toggle_skill_tree") and tutorial.visible == false and state != States.dead :
+	if event.is_action_released("toggle_skill_tree") and tutorial.visible == false and not level_menu.visible and state != States.dead :
 		
 		skill_tree_menu.visible = not skill_tree_menu.visible
