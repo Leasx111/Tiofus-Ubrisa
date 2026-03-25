@@ -168,16 +168,10 @@ func invincible(toggle : bool) -> void :
 	if toggle :
 		
 		player_area.set_deferred("disabled", true)
-		
-		collision_layer = 2
-		collision_mask = 2
 	
 	else :
 		
 		player_area.set_deferred("disabled", false)
-		
-		collision_layer = 1
-		collision_mask = 1
 
 func die() -> void :
 	

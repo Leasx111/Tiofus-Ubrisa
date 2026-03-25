@@ -1374,10 +1374,10 @@ position = Vector2(0, -33)
 shape = SubResource("RectangleShape2D_ktm03")
 
 [node name="spawn_left" type="Marker2D" parent="." unique_id=1476352150]
-position = Vector2(-530, 0)
+position = Vector2(-470, 0)
 
 [node name="spawn_right" type="Marker2D" parent="." unique_id=2103611970]
-position = Vector2(532, 0)
+position = Vector2(530, 0)
 
 [connection signal="area_entered" from="left_door/Area2D" to="left_door" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="right_door/Area2D" to="right_door" method="_on_area_2d_area_entered"]
