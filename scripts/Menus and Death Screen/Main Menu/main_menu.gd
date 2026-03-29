@@ -1,18 +1,10 @@
 extends Control
 
-@export var world_environment: WorldEnvironment
-
 @export var new_game_button: Button
 @export var load_button: Button 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void :
-	
-	if FileAccess.file_exists("user://settings.tres") :
-		
-		SaveData.settings = ResourceLoader.load("user://settings.tres")
-	
-	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	SaveData.calc_files()
 	
@@ -41,7 +33,11 @@ func _process(_delta: float) -> void :
 
 func _on_new_game_button_up() -> void :
 	
-	get_tree().change_scene_to_file("res://scenes/Other/game.tscn")
+	var game = load("res://scenes/Other/game.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(game.instantiate())
 	
 	SaveData.player_data = PlayerData.new() 
 	
@@ -53,13 +49,21 @@ func _on_new_game_button_up() -> void :
 
 func _on_load_button_up() -> void :
 	
-	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/load_menu.tscn")
+	var load_menu = load("res://scenes/Menus and Death Screen/Menus/load_menu.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(load_menu.instantiate())
 	
 	SaveData.load_game = 1
 
 func _on_settings_button_up() -> void :
 	
-	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/settings_menu.tscn")
+	var settings_menu = load("res://scenes/Menus and Death Screen/Menus/settings_menu.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(settings_menu.instantiate())
 
 func _on_exit_button_up() -> void:
 	

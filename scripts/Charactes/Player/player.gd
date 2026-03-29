@@ -21,7 +21,7 @@ class_name Player
 @export var invincibility_timer : Timer
 
 @onready var enemy : Enemy = Enemy.new()
-@onready var first_room : PackedScene = preload("res://scenes/Rooms/room_1.tscn")
+@onready var first_room : PackedScene = load("res://scenes/Rooms/room_1.tscn")
 
 const jump_speed : int = -400
 const speed : int = 200

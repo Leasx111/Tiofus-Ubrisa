@@ -2,9 +2,9 @@ extends Sprite2D
 
 class_name Door
 
-@onready var room_loader : RoomLoader = $"/root/Game/RoomLoader"
-@onready var player : Player = $"/root/Game/Player"
-@onready var room_transition : RoomTransition = $"/root/Game/Player/CanvasLayer/RoomTransition"
+@onready var room_loader : RoomLoader = $"/root/MainScene/Game/RoomLoader"
+@onready var player : Player = $"/root/MainScene/Game/Player"
+@onready var room_transition : RoomTransition = $"/root/MainScene/Game/Player/CanvasLayer/RoomTransition"
 
 @export var target_room_path : String
 @export var spawn_point : String

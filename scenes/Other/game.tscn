@@ -14,23 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://bkcxmfr0o6no0" path="res://scenes/Menus and Death Screen/Menus/skill_tree_menu.tscn" id="12_my4xy"]
 [ext_resource type="PackedScene" uid="uid://dyflootcf5am3" path="res://scenes/Menus and Death Screen/Menus/tutorial.tscn" id="13_ugoi2"]
 
-[sub_resource type="Environment" id="Environment_ugoi2"]
-background_mode = 3
-background_canvas_max_layer = 10
-adjustment_enabled = true
-adjustment_contrast = 1.25
-adjustment_saturation = 1.25
-
 [node name="Game" type="Node2D" unique_id=2101353719 node_paths=PackedStringArray("world_environment", "roomloader", "tutorial", "player")]
 script = ExtResource("1_2jcow")
-world_environment = NodePath("WorldEnvironment")
+world_environment = NodePath("")
 first_room = ExtResource("2_ogxqr")
 roomloader = NodePath("RoomLoader")
 tutorial = NodePath("CanvasLayer/Tutorial")
 player = NodePath("Player")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=757789526]
-environment = SubResource("Environment_ugoi2")
 
 [node name="RoomLoader" type="Node" parent="." unique_id=708423792 node_paths=PackedStringArray("room_holder", "colorrect", "player")]
 script = ExtResource("1_0tnpc")

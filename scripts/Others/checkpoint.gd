@@ -6,7 +6,7 @@ class_name Checkpoint
 
 @export var save_image : Texture2D
 
-@onready var player : CharacterBody2D = $"/root/Game/Player"
+@onready var player : CharacterBody2D = $"/root/MainScene/Game/Player"
 
 # Variable for player near
 var player_is_near : bool = false

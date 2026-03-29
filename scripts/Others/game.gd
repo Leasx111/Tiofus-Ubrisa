@@ -2,8 +2,6 @@ extends Node2D
 
 class_name Game
 
-@export var world_environment: WorldEnvironment
-
 @export var first_room : PackedScene
 @export var roomloader : RoomLoader
 @export var tutorial: TutorialMenu
@@ -11,8 +9,6 @@ class_name Game
 
 
 func _ready() -> void :
-	
-	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	await roomloader.change_room(first_room, "spawn_left")
 	

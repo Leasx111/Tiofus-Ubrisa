@@ -1,10 +1,6 @@
 extends Control
 
-@export var world_environment: WorldEnvironment
-
 func _ready() -> void: 
-	
-	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	for i in 4 : 
 		
@@ -47,9 +43,22 @@ func update_img(i : int, delete : bool) :
 			button_node.get_child(0).text = ""
 
 
+func change_scene_to_game() -> void :
+	
+	var game = load("res://scenes/Other/game.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(game.instantiate())
+
+
 func _on_button_button_up() -> void:
 	
-	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	var main_menu = load("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(main_menu.instantiate())
 	
 	SaveData.load_game = 0
 
@@ -58,7 +67,7 @@ func _on_load_button_0_button_up() -> void:
 	
 	if FileAccess.file_exists("user://test_data0.tres") == true :
 		
-		get_tree().change_scene_to_file("res://scenes/Other/game.tscn")
+		change_scene_to_game()
 		
 		SaveData.player_data = ResourceLoader.load("user://test_data0.tres")
 		
@@ -69,7 +78,7 @@ func _on_load_button_1_button_up() -> void:
 	
 	if FileAccess.file_exists("user://test_data1.tres") == true :
 		
-		get_tree().change_scene_to_file("res://scenes/Other/game.tscn")
+		change_scene_to_game()
 		
 		SaveData.player_data = ResourceLoader.load("user://test_data1.tres")
 		
@@ -80,7 +89,7 @@ func _on_load_button_2_button_up() -> void:
 	
 	if FileAccess.file_exists("user://test_data2.tres") == true :
 		
-		get_tree().change_scene_to_file("res://scenes/Other/game.tscn")
+		change_scene_to_game()
 		
 		SaveData.player_data = ResourceLoader.load("user://test_data2.tres")
 		
@@ -91,7 +100,7 @@ func _on_load_button_3_button_up() -> void:
 	
 	if FileAccess.file_exists("user://test_data3.tres") == true :
 		
-		get_tree().change_scene_to_file("res://scenes/Other/game.tscn")
+		change_scene_to_game()
 		
 		SaveData.player_data = ResourceLoader.load("user://test_data3.tres")
 		

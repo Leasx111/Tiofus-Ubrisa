@@ -1,6 +1,7 @@
 extends Control
 
-@export var world_environment: WorldEnvironment
+@onready var world_environment: WorldEnvironment = $"/root/MainScene/WorldEnvironment"
+
 @export var brightness_slider: HSlider
 @export var master_sound_slider: HSlider
 
@@ -49,4 +50,8 @@ func _on_button_button_up() -> void:
 	
 	ResourceSaver.save(SaveData.settings, "user://settings.tres")
 	
-	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	var main_menu = load("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	
+	self.queue_free()
+	
+	get_parent().add_child(main_menu.instantiate())

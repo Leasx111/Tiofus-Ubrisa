@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RPG game final test"
-run/main_scene="uid://b5t6bnobclnsp"
+run/main_scene="uid://ric30ijuc58j"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/use_filter=false
 

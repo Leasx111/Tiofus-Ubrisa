@@ -2,6 +2,8 @@ extends Control
 
 class_name ExitMenu
 
+@onready var main_scene : Node2D = $"/root/MainScene"
+
 @export var level_menu : LevelMenu
 @export var tutorial: TutorialMenu
 @export var skill_tree_menu: Control
@@ -16,7 +18,11 @@ func _on_exit_pressed() -> void:
 	
 	get_tree().paused = false
 	
-	get_tree().change_scene_to_file("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	var main_menu = load("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	
+	get_parent().get_parent().get_parent().queue_free()
+	
+	main_scene.add_child(main_menu.instantiate())
 
 func _input(event: InputEvent) -> void : 
 	

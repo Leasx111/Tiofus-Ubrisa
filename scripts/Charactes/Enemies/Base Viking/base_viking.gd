@@ -14,7 +14,7 @@ class_name Enemy
 @export var health : int
 @export var xp : int
 
-@onready var player : Player = $"/root/Game/Player"
+@onready var player : Player = $"/root/MainScene/Game/Player"
 
 const speed : float = 75.0
 
