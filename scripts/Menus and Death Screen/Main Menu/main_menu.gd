@@ -33,13 +33,13 @@ func _process(_delta: float) -> void :
 
 func _on_new_game_button_up() -> void :
 	
+	SaveData.player_data = PlayerData.new() 
+	
 	var game = load("res://scenes/Other/game.tscn")
 	
 	self.queue_free()
 	
 	get_parent().add_child(game.instantiate())
-	
-	SaveData.player_data = PlayerData.new() 
 	
 	SaveData.calc_files()
 	

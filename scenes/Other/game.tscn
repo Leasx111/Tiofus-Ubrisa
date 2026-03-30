@@ -14,9 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bkcxmfr0o6no0" path="res://scenes/Menus and Death Screen/Menus/skill_tree_menu.tscn" id="12_my4xy"]
 [ext_resource type="PackedScene" uid="uid://dyflootcf5am3" path="res://scenes/Menus and Death Screen/Menus/tutorial.tscn" id="13_ugoi2"]
 
-[node name="Game" type="Node2D" unique_id=2101353719 node_paths=PackedStringArray("world_environment", "roomloader", "tutorial", "player")]
+[node name="Game" type="Node2D" unique_id=2101353719 node_paths=PackedStringArray("roomloader", "tutorial", "player")]
 script = ExtResource("1_2jcow")
-world_environment = NodePath("")
 first_room = ExtResource("2_ogxqr")
 roomloader = NodePath("RoomLoader")
 tutorial = NodePath("CanvasLayer/Tutorial")
@@ -53,13 +52,14 @@ limit_smoothed = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1679689125]
 
-[node name="ExitMenu" parent="Player/CanvasLayer" unique_id=35507965 node_paths=PackedStringArray("level_menu", "tutorial", "skill_tree_menu", "player") instance=ExtResource("4_0tnpc")]
+[node name="ExitMenu" parent="Player/CanvasLayer" unique_id=35507965 node_paths=PackedStringArray("level_menu", "tutorial", "room_transition", "skill_tree_menu", "player") instance=ExtResource("4_0tnpc")]
 visible = false
 z_index = 5
 anchor_bottom = 0.99700004
 offset_bottom = -322.05603
 level_menu = NodePath("../LevelMenu")
 tutorial = NodePath("../../../CanvasLayer/Tutorial")
+room_transition = NodePath("../RoomTransition")
 skill_tree_menu = NodePath("../SkillTreeMenu")
 player = NodePath("../..")
 

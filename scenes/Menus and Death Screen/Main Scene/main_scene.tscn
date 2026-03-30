@@ -18,9 +18,10 @@ tags = {
 }
 loop = true
 
-[node name="MainScene" type="Node2D" unique_id=1329759394 node_paths=PackedStringArray("world_environment")]
+[node name="MainScene" type="Node2D" unique_id=1329759394 node_paths=PackedStringArray("world_environment", "audio_player")]
 script = ExtResource("1_y5i7e")
 world_environment = NodePath("WorldEnvironment")
+audio_player = NodePath("AudioStreamPlayer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1857203901]
 environment = SubResource("Environment_0f027")

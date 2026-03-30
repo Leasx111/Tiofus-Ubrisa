@@ -1,6 +1,7 @@
 extends Control
 
 @onready var world_environment: WorldEnvironment = $"/root/MainScene/WorldEnvironment"
+@onready var audio_player: AudioStreamPlayer = $"/root/MainScene/AudioStreamPlayer"
 
 @export var brightness_slider: HSlider
 @export var master_sound_slider: HSlider
@@ -14,6 +15,10 @@ func _ready() -> void:
 	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
 	
 	brightness_slider.value = SaveData.settings.brightness
+	
+	audio_player.volume_linear = SaveData.settings.master_sound / 100
+	
+	master_sound_slider.value = SaveData.settings.master_sound
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -29,6 +34,8 @@ func _on_brightness_slider_value_changed(value: float) -> void:
 func _on_master_sound_slider_value_changed(value: float) -> void:
 	
 	SaveData.settings.master_sound = value
+	
+	audio_player.volume_linear = SaveData.settings.master_sound / 100
 
 func _on_difficulty_slider_value_changed(value: float) -> void :
 	

@@ -6,6 +6,7 @@ class_name ExitMenu
 
 @export var level_menu : LevelMenu
 @export var tutorial: TutorialMenu
+@export var room_transition : RoomTransition
 @export var skill_tree_menu: Control
 @export var player : Player
 
@@ -26,7 +27,7 @@ func _on_exit_pressed() -> void:
 
 func _input(event: InputEvent) -> void : 
 	
-	if event.is_action_released("toggle_exit_menu") and not level_menu.visible and not skill_tree_menu.visible and not tutorial.visible and player.state != player.States.dead :
+	if event.is_action_released("toggle_exit_menu") and not level_menu.visible and not skill_tree_menu.visible and not tutorial.visible and not room_transition.visible and player.state != player.States.dead :
 		
 		visible = not visible
 		

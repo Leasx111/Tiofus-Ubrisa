@@ -18,7 +18,7 @@ font_size = 32
 font = ExtResource("1_ay1y4")
 font_size = 27
 
-[node name="SettingsMenu" type="Control" unique_id=963175924 node_paths=PackedStringArray("world_environment", "brightness_slider", "master_sound_slider", "label")]
+[node name="SettingsMenu" type="Control" unique_id=963175924 node_paths=PackedStringArray("brightness_slider", "master_sound_slider", "label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eduwh")
-world_environment = NodePath("")
 brightness_slider = NodePath("VBoxContainer/Brightness/BrightnessSlider")
 master_sound_slider = NodePath("VBoxContainer/MasterSound/MasterSoundSlider")
 label = NodePath("VBoxContainer/Label")
@@ -86,7 +85,6 @@ tick_count = 9
 ticks_position = 3
 
 [node name="MasterSound" type="Label" parent="VBoxContainer" unique_id=971711625]
-visible = false
 layout_mode = 2
 size_flags_vertical = 6
 text = "master sound :"
@@ -102,7 +100,7 @@ offset_bottom = 30.0
 step = 25.0
 value = 100.0
 rounded = true
-tick_count = 9
+tick_count = 5
 ticks_position = 3
 
 [node name="Difficulty" type="Label" parent="VBoxContainer" unique_id=259712207]

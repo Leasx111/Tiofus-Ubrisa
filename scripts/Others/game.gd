@@ -10,6 +10,8 @@ class_name Game
 
 func _ready() -> void :
 	
+	get_parent().get_child(1).stream_paused = true
+	
 	await roomloader.change_room(first_room, "spawn_left")
 	
 	if SaveData.load_game != 0:
