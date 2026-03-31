@@ -4,6 +4,7 @@ class_name Menus
 
 @export var level_menu: LevelMenu
 @export var skill_tree_menu: Control
+@export var canvas_layer: CanvasLayer
 @export var settings_menu: Control
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +21,8 @@ func _on_button_button_up() -> void:
 	level_menu.visible = true
 	skill_tree_menu.visible = false
 	settings_menu.visible = false
+	
+	canvas_layer.visible = false
 
 
 func _on_button_2_button_up() -> void:
@@ -27,6 +30,8 @@ func _on_button_2_button_up() -> void:
 	level_menu.visible = false
 	skill_tree_menu.visible = true
 	settings_menu.visible = false
+	
+	canvas_layer.visible = true
 
 
 func _on_button_3_button_up() -> void:
@@ -34,3 +39,5 @@ func _on_button_3_button_up() -> void:
 	level_menu.visible = false
 	skill_tree_menu.visible = false
 	settings_menu.visible = true
+	
+	canvas_layer.visible = false

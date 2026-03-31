@@ -11,7 +11,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_7rjnq"]
 font = ExtResource("4_obq1j")
 
-[node name="Menus" type="Control" unique_id=2050837491 node_paths=PackedStringArray("level_menu", "skill_tree_menu", "settings_menu")]
+[node name="Menus" type="Control" unique_id=2050837491 node_paths=PackedStringArray("level_menu", "skill_tree_menu", "canvas_layer", "settings_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_7rjnq")
 level_menu = NodePath("LevelMenu")
 skill_tree_menu = NodePath("SkillTreeMenu")
+canvas_layer = NodePath("SkillTreeMenu/Node2D/CanvasLayer")
 settings_menu = NodePath("SettingsMenu")
 
 [node name="LevelMenu" parent="." unique_id=1065140838 instance=ExtResource("1_ufepn")]
@@ -56,6 +57,18 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 offset_top = 32.0
+offset_bottom = -462.25
+
+[node name="CanvasLayer" parent="SkillTreeMenu/Node2D" parent_id_path=PackedInt32Array(1988390575, 423140551) index="0" unique_id=1518601829]
+visible = false
+
+[node name="Sprite2D" parent="SkillTreeMenu/Node2D/CanvasLayer" index="0" unique_id=1683038692]
+position = Vector2(0, 32)
+scale = Vector2(1, 0.9506173)
+
+[node name="Panel" parent="SkillTreeMenu/Node2D/CanvasLayer" index="1" unique_id=1096581101]
+position = Vector2(4, 36)
+scale = Vector2(1, 0.9382715)
 
 [node name="Button2" type="Button" parent="." unique_id=1567000809]
 z_index = -1
@@ -121,4 +134,5 @@ vertical_alignment = 1
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
 
+[editable path="SkillTreeMenu"]
 [editable path="SettingsMenu"]
