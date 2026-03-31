@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Game
 
+@export var room_transition: RoomTransition
 @export var first_room : PackedScene
 @export var roomloader : RoomLoader
 @export var tutorial: TutorialMenu
@@ -25,6 +26,14 @@ func _ready() -> void :
 	else : 
 		
 		await tutorial.fade_in()
+		
+	await room_transition.tween_finished
+	
+	player.player_exp.max_value = SaveData.player_data.max_XP
+	
+	var tween_exp = create_tween()
+	
+	tween_exp.tween_property(player.player_exp, "value", SaveData.player_data.current_xp, 1)
 
 func _input(event: InputEvent) -> void :
 	

@@ -15,7 +15,7 @@ func change_room(new_room, spawn_point) -> void :
 		
 		await colorrect.fade_in()
 	
-	var room = new_room.instantiate()
+	var room : Node = new_room.instantiate()
 	
 	if current_room :
 		
@@ -26,7 +26,7 @@ func change_room(new_room, spawn_point) -> void :
 	
 	current_room = room
 	
-	var spawn = room.get_node(spawn_point)
+	var spawn : Node = room.get_node(spawn_point)
 	
 	player.global_position = spawn.global_position
 	

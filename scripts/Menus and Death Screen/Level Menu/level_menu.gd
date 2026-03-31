@@ -84,7 +84,7 @@ func _on_arcane_down_pressed() -> void :
 		SaveData.player_data.arcane -= 1
 
 # Update text
-func update_text() : 
+func update_text() -> void : 
 	
 	if (player.player_exp.max_value - player.player_exp.value) >= 0 :
 		
@@ -98,9 +98,3 @@ func update_text() :
 	
 	current_points.text = "Current points : " + str(SaveData.player_data.level_up_points) 
 	xp_to_next_level.text = "XP to next level : " + str(SaveData.player_data.XP_to_next_level)
-
-func _input(event: InputEvent) -> void :
-	
-	if event.is_action_released("toggle_level_menu") and not tutorial.visible  and not skill_tree_menu.visible and player.state != player.States.dead :
-		
-		visible = not visible

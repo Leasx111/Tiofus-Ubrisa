@@ -7,7 +7,8 @@ class_name DeathScreen
 @export var text_background : Sprite2D
 @export var player : Player
 @export var exit_menu : ExitMenu
-@export var level_menu : LevelMenu
+@export var death_screen: DeathScreen
+@export var menu: Menus
 
 var text_background_fade_duration : float = 2.0
 var background_fade_duration : float = 5.0
@@ -19,16 +20,16 @@ func _process(_delta: float) -> void :
 	
 	pass
 
-func fade_in() : 
+func fade_in() -> void : 
 	
 	visible = true
 	
 	exit_menu.visible = false
-	level_menu.visible = false
+	menu.visible = false
 	
-	var text_background_tween = get_tree().create_tween()
-	var background_tween = get_tree().create_tween()
-	var text_tween = get_tree().create_tween()
+	var text_background_tween : Tween = get_tree().create_tween()
+	var background_tween : Tween = get_tree().create_tween()
+	var text_tween : Tween = get_tree().create_tween()
 	
 	text_background_tween.tween_property(text_background, "modulate:a", 1, text_background_fade_duration)
 	background_tween.tween_property(background, "modulate:a", 1, background_fade_duration)
@@ -39,6 +40,8 @@ func fade_in() :
 	text_tween.play()
 	
 	await background_tween.finished
+	
+	player.emit_signal("player_dead")
 	
 	text_background_tween.kill()
 	background_tween.kill()

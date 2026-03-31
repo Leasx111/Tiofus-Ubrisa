@@ -17,13 +17,13 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func fade_in() : 
+func fade_in() -> void : 
 	
 	player.set_physics_process(false)
 	
 	visible = true
 	
-	var loading_screen = get_tree().create_tween()
+	var loading_screen : Tween = get_tree().create_tween()
 	
 	loading_screen.tween_property(self, "modulate:a", 1, 1)
 	
@@ -31,11 +31,11 @@ func fade_in() :
 	
 	loading_screen.kill()
 
-func fade_out() : 
+func fade_out() -> void : 
 	
 	player.set_physics_process(true)
 	
-	var loading_screen = get_tree().create_tween()
+	var loading_screen : Tween = get_tree().create_tween()
 	
 	loading_screen.tween_property(self, "modulate:a", 0, 1)
 	

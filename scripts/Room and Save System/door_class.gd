@@ -13,6 +13,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("player") : 
 		
-		var new_room = load(target_room_path)
+		var new_room : PackedScene = load(target_room_path)
 		
 		await room_loader.call_deferred("change_room", new_room, spawn_point)

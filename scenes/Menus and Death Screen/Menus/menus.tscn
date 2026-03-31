@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://d4n1eqlu1h47v"]
+
+[ext_resource type="Script" uid="uid://0kiqjsrx43hy" path="res://scenes/Menus and Death Screen/Menus/menus.gd" id="1_7rjnq"]
+[ext_resource type="PackedScene" uid="uid://crw6wkk478mg" path="res://scenes/Menus and Death Screen/Menus/level_menu.tscn" id="1_ufepn"]
+[ext_resource type="PackedScene" uid="uid://bkcxmfr0o6no0" path="res://scenes/Menus and Death Screen/Menus/skill_tree_menu.tscn" id="2_obq1j"]
+[ext_resource type="Texture2D" uid="uid://bu1o4np4hj2yu" path="res://assets/Menus and Death Screen/Level Menu/untitled.png" id="2_qdl4n"]
+[ext_resource type="PackedScene" uid="uid://gfx83ifqywpr" path="res://scenes/Menus and Death Screen/Menus/settings_menu.tscn" id="3_7rjnq"]
+[ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="4_obq1j"]
+[ext_resource type="Texture2D" uid="uid://bf8r5gvimjqbm" path="res://assets/Menus and Death Screen/Level Menu/untitled4.png" id="7_un5aa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rjnq"]
+font = ExtResource("4_obq1j")
+
+[node name="Menus" type="Control" unique_id=2050837491 node_paths=PackedStringArray("level_menu", "skill_tree_menu", "settings_menu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7rjnq")
+level_menu = NodePath("LevelMenu")
+skill_tree_menu = NodePath("SkillTreeMenu")
+settings_menu = NodePath("SettingsMenu")
+
+[node name="LevelMenu" parent="." unique_id=1065140838 instance=ExtResource("1_ufepn")]
+visible = false
+layout_mode = 1
+offset_top = 8.024
+offset_bottom = 7.975952
+
+[node name="Button" type="Button" parent="." unique_id=1408122610]
+clip_contents = true
+custom_minimum_size = Vector2(153, 0)
+layout_mode = 0
+offset_left = 309.0
+offset_top = 8.0
+offset_right = 470.0
+offset_bottom = 40.0
+icon = ExtResource("2_qdl4n")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Button" unique_id=1304909784]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 155.0
+offset_bottom = 27.0
+text = "Stats"
+label_settings = SubResource("LabelSettings_7rjnq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillTreeMenu" parent="." unique_id=1988390575 instance=ExtResource("2_obq1j")]
+visible = false
+layout_mode = 1
+offset_top = 32.0
+
+[node name="Button2" type="Button" parent="." unique_id=1567000809]
+z_index = -1
+custom_minimum_size = Vector2(153, 0)
+layout_mode = 0
+offset_left = 487.0
+offset_top = 8.0
+offset_right = 648.0
+offset_bottom = 40.0
+size_flags_horizontal = 6
+icon = ExtResource("2_qdl4n")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Button2" unique_id=1858126295]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 155.0
+offset_bottom = 27.0
+text = "skill tree"
+label_settings = SubResource("LabelSettings_7rjnq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMenu" parent="." unique_id=963175924 instance=ExtResource("3_7rjnq")]
+visible = false
+layout_mode = 1
+offset_top = 35.0
+
+[node name="Background" parent="SettingsMenu" index="0" unique_id=1755745129]
+position = Vector2(576, 305)
+scale = Vector2(1, 0.9506173)
+texture = ExtResource("7_un5aa")
+
+[node name="Button" parent="SettingsMenu" index="2" unique_id=1124436847]
+visible = false
+
+[node name="Button3" type="Button" parent="." unique_id=388838432]
+z_index = -1
+custom_minimum_size = Vector2(153, 0)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 8.0
+offset_right = 826.0
+offset_bottom = 40.0
+icon = ExtResource("2_qdl4n")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Button3" unique_id=78278513]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 155.0
+offset_bottom = 27.0
+text = "settings"
+label_settings = SubResource("LabelSettings_7rjnq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Button3" to="." method="_on_button_3_button_up"]
+
+[editable path="SettingsMenu"]

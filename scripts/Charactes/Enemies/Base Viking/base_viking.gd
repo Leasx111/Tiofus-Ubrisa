@@ -18,14 +18,27 @@ class_name Enemy
 
 const speed : float = 75.0
 
-enum States {idle, chasing, falling, hurt, attacking, dead}
+enum States {idle, chasing, falling, hurt, attacking, first_skill, final_skill, dead}
 
 var state: States = States.idle : set = set_state
 
 var player_near : bool = false
 var on_screen : bool = false
+var start_pos : Vector2
 var direction : Vector2
 var pos : Vector2
+
+
+func _ready() -> void :
+	
+	start_pos = position
+	
+	player.player_dead.connect(_on_player_dead)
+	
+	enemy_health.max_value = health
+	
+	enemy_health.value = health
+
 
 func _physics_process(delta: float) -> void :
 	
@@ -47,7 +60,7 @@ func _physics_process(delta: float) -> void :
 			
 			velocity += get_gravity() * delta
 		
-		if state not in [States.hurt, States.attacking] :
+		if state not in [States.hurt, States.attacking, States.first_skill, States.final_skill] :
 			
 			if velocity == Vector2.ZERO :
 				
@@ -111,6 +124,14 @@ func set_state(new_state : States) -> void :
 		
 		animation_player.play("attack")
 	
+	elif state == States.first_skill :
+		
+		animation_player.play("first_skill")
+	
+	elif state == States.final_skill :
+		
+		animation_player.play("final_skill")
+	
 	elif state == States.dead :
 		
 		animation_player.play("death")
@@ -156,6 +177,12 @@ func flip_sprite(facing : String) -> void :
 		enemy_collision.position.x = abs(enemy_collision.position.x) *  1
 		enemy_area.position.x = abs(enemy_area.position.x) *  1
 
+
+func _on_player_dead() -> void : 
+	
+	self.position = start_pos
+
+
 func _on_area_2d_2_area_entered(area : Area2D) -> void :
 	
 	if area.is_in_group("player") and state != States.dead :
@@ -164,7 +191,7 @@ func _on_area_2d_2_area_entered(area : Area2D) -> void :
 
 func _on_area_2d_2_area_exited(area : Area2D) -> void :
 	
-	if area.is_in_group("player") and not vulnerability_timer.is_stopped() :
+	if area.is_in_group("player") and not vulnerability_timer.is_stopped() and state != States.dead :
 		
 		state = States.idle
 
@@ -189,6 +216,14 @@ func _on_animation_player_animation_finished(anim_name : StringName) -> void :
 		state = States.idle
 		
 		vulnerability_timer.start()
+	
+	elif anim_name == "first_skill" :
+		
+		state = States.idle
+	
+	elif anim_name == "final_skill" :
+		
+		state = States.idle
 	
 	elif anim_name == "death" :
 		

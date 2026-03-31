@@ -11,9 +11,8 @@ class_name Player
 @export var room_transition : RoomTransition
 @export var roomloader : RoomLoader
 @export var viking_rage_screen : ColorRect
-@export var level_menu : LevelMenu
 @export var tutorial: TutorialMenu
-@export var skill_tree_menu : Control
+@export var menu: Menus
 @export var exit_menu : ExitMenu
 @export var player_sprite : Sprite2D
 @export var viking_rage_timer : Timer
@@ -36,15 +35,15 @@ var damage : int
 
 signal enemy_killed
 
+@warning_ignore("unused_signal")
+signal player_dead
+
 func _ready() -> void :
 	
 	SaveData.save_requested.connect(_on_save_requested)
 	SaveData.load_requested.connect(_on_load_requested)
 	
 	connect("enemy_killed", _on_enemy_killed)
-	
-	player_exp.max_value = SaveData.player_data.max_XP
-	player_exp.value = SaveData.player_data.current_xp
 	
 	room_transition.visible = true
 	player_exp.visible = true
@@ -181,7 +180,7 @@ func die() -> void :
 
 func calc_damage() -> void :
 	
-	var luck_value = SaveData.player_data.luck
+	var luck_value : int = SaveData.player_data.luck
 	
 	var crit : int = randi() % (100 - luck_value)
 	
@@ -197,7 +196,7 @@ func respawn() -> void :
 	SaveData.player_data.viking_rage = 1
 	
 	death_screen.visible = false
-	level_menu.visible = false
+	menu.visible = false
 	viking_rage_screen.visible = false
 	
 	if SaveData.player_data.last_checkpoint :
@@ -249,7 +248,7 @@ func flip_sprite(facing : String) -> void :
 
 func gain_exp(xp : int) -> void :
 	
-	var tween_increase_value = get_tree().create_tween()
+	var tween_increase_value : Tween = get_tree().create_tween()
 	
 	tween_increase_value.tween_property(player_exp, "value", player_exp.value + xp, 1)
 	
@@ -257,7 +256,7 @@ func gain_exp(xp : int) -> void :
 	
 	if player_exp.value >= player_exp.max_value :
 		
-		var tween_value = get_tree().create_tween()
+		var tween_value : Tween = get_tree().create_tween()
 		
 		tween_value.tween_property(player_exp, "value", player_exp.value - player_exp.max_value, 0.2)
 		
@@ -365,30 +364,32 @@ func _on_viking_rage_timer_timeout() -> void:
 
 func _input(event: InputEvent) -> void :
 	
-	if event.is_action_pressed("jump") and is_on_floor() :
+	if state != States.dead :
 		
-		velocity.y = jump_speed
-		
-		state = States.jumping
-	
-	if event.is_action_pressed("slide") and is_on_floor() and vulnerability_timer.is_stopped() :
-		
-		state = States.rolling
-	
-	if event.is_action_released("attack") and state != States.rolling and state != States.hurt and state != States.dead :
-		
-		if attack == 1 :
+		if event.is_action_pressed("jump") and is_on_floor():
 			
-			attack = 2
-		
-		elif attack == 3 :
+			velocity.y = jump_speed
 			
-			attack = 4
+			state = States.jumping
 		
-		elif attack == 0 :
+		if event.is_action_pressed("slide") and state == States.running and is_on_floor() and vulnerability_timer.is_stopped() :
 			
-			state = States.first_attack
-	
-	if event.is_action_released("toggle_skill_tree") and tutorial.visible == false and not level_menu.visible and state != States.dead :
+			state = States.rolling
 		
-		skill_tree_menu.visible = not skill_tree_menu.visible
+		if event.is_action_released("attack") and state != States.rolling and state != States.hurt :
+			
+			if attack == 1 :
+				
+				attack = 2
+			
+			elif attack == 3 :
+				
+				attack = 4
+			
+			elif attack == 0 :
+				
+				state = States.first_attack
+		
+		if event.is_action_released("toggle_menu") and tutorial.visible == false :
+			
+			menu.visible = not menu.visible

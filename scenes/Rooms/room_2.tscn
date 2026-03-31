@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqqrx7wmqrgep" path="res://assets/TileMaps and Props/TileSet/TX Tileset Ground.png" id="1_mm06k"]
 [ext_resource type="Script" uid="uid://dxkie5cum541m" path="res://scripts/Room and Save System/door_class.gd" id="2_pfq81"]
-[ext_resource type="PackedScene" uid="uid://8byyvr3hyupx" path="res://scenes/Characters/Enemies/Ice Viking/ice_viking.tscn" id="3_77yun"]
+[ext_resource type="PackedScene" uid="uid://c8b1rpb5phgue" path="res://scenes/Characters/Enemies/Ice Viking/ice_viking.tscn" id="3_77yun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w0ydv"]
 texture = ExtResource("1_mm06k")
@@ -1381,7 +1381,9 @@ position = Vector2(-470, 0)
 position = Vector2(530, 0)
 
 [node name="Enemy" parent="." unique_id=553816022 instance=ExtResource("3_77yun")]
-position = Vector2(-5.9604645e-08, -38)
+position = Vector2(-1.9999999, -30)
+health = 500
+xp = 1000
 
 [connection signal="area_entered" from="left_door/Area2D" to="left_door" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="right_door/Area2D" to="right_door" method="_on_area_2d_area_entered"]

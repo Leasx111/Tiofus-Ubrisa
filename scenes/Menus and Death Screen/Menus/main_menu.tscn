@@ -13,7 +13,7 @@ font_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0.22225618, 2.4215785e-07, 9.62615e-08, 0.19607843)
 
-[node name="MainMenu" type="Control" unique_id=904745671 node_paths=PackedStringArray("world_environment", "new_game_button", "load_button")]
+[node name="MainMenu" type="Control" unique_id=904745671 node_paths=PackedStringArray("new_game_button", "load_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -22,7 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ln24")
-world_environment = NodePath("")
 new_game_button = NodePath("VBoxContainer/VBoxContainer/NewGame")
 load_button = NodePath("VBoxContainer/VBoxContainer/Load")
 

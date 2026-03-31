@@ -29,7 +29,7 @@ func _pressed() -> void :
 		
 		for i in next_button.size() :
 			
-			var node = get_node(next_button[i])
+			var node : Node = get_node(next_button[i])
 			
 			if node.disabled :
 				

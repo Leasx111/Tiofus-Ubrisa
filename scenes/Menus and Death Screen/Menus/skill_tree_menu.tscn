@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkcxmfr0o6no0"]
 
 [ext_resource type="Script" uid="uid://c7cp406ct8s2a" path="res://scripts/Menus and Death Screen/Skill Tree Menu/skill_button_class.gd" id="1_8lby2"]
+[ext_resource type="Texture2D" uid="uid://bnxumhw6tgmcg" path="res://assets/Menus and Death Screen/Level Menu/untitled1.png" id="1_r20qt"]
 [ext_resource type="Texture2D" uid="uid://cmolykv84f4ed" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/Main_button_icon.png" id="1_w1wgq"]
 [ext_resource type="FontFile" uid="uid://dw8vim0scomaj" path="res://assets/Fonts/Viking.ttf" id="2_waeqx"]
 [ext_resource type="Texture2D" uid="uid://cngc65gll6m84" path="res://assets/Menus and Death Screen/Skill Tree Menu/Viking icons/first_skill_icon.png" id="2_yl6tb"]
@@ -29,11 +30,13 @@
 [ext_resource type="Texture2D" uid="uid://b8msu3j67um1n" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/weapon_divine_buff_icon.png" id="26_hqijs"]
 [ext_resource type="Texture2D" uid="uid://c30p5v34tixvc" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/final_skill_icon.png" id="27_oypde"]
 [ext_resource type="Texture2D" uid="uid://bpm5pwp43for3" path="res://assets/Menus and Death Screen/Skill Tree Menu/Paladin Icons/paladin_final_passive.png" id="28_hpogp"]
+[ext_resource type="Texture2D" uid="uid://3k4mjgt5mtog" path="res://assets/Menus and Death Screen/Level Menu/untitled2.png" id="30_2a00w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_66gxo"]
 font = ExtResource("2_waeqx")
 
 [node name="SkillTreeMenu" type="Control" unique_id=1988390575]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,18 +44,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="." unique_id=1878439214]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+[node name="Node2D" type="Node2D" parent="." unique_id=1625562597]
 
-[node name="SkillButton" type="Button" parent="." unique_id=273043541 node_paths=PackedStringArray("skill_description_text")]
-layout_mode = 0
-offset_left = 552.0
-offset_top = 280.0
-offset_right = 592.0
-offset_bottom = 320.0
+[node name="Background" type="Sprite2D" parent="Node2D" unique_id=726711079]
+scale = Vector2(4, 4)
+texture = ExtResource("1_r20qt")
+centered = false
+
+[node name="SkillButton" type="Button" parent="Node2D" unique_id=273043541 node_paths=PackedStringArray("skill_description_text")]
+offset_left = 2208.0
+offset_top = 1120.0
+offset_right = 2248.0
+offset_bottom = 1160.0
+scale = Vector2(4, 4)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 disabled = true
 icon = ExtResource("1_w1wgq")
@@ -66,9 +70,10 @@ skill_description = "Increases melee damage by 20%"
 unlocked = true
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="VikingSkillTree" type="Node2D" parent="." unique_id=788429807]
+[node name="VikingSkillTree" type="Node2D" parent="Node2D" unique_id=788429807]
+scale = Vector2(4, 4)
 
-[node name="SkillButton" type="Button" parent="VikingSkillTree" unique_id=470285848 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+[node name="SkillButton" type="Button" parent="Node2D/VikingSkillTree" unique_id=470285848 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
 offset_left = 608.0
 offset_top = 240.0
 offset_right = 632.0
@@ -88,7 +93,7 @@ skill_name = "Arice"
 skill_description = "You perform an upward attack that makes ice rise from the ground"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton1" type="Button" parent="VikingSkillTree" unique_id=781726700 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton1" type="Button" parent="Node2D/VikingSkillTree" unique_id=781726700 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 656.0
 offset_top = 192.0
 offset_right = 680.0
@@ -106,7 +111,7 @@ skill_name = "Ice damage up"
 skill_description = "Increases ice damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton2" type="Button" parent="VikingSkillTree" unique_id=541355644 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton2" type="Button" parent="Node2D/VikingSkillTree" unique_id=541355644 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 704.0
 offset_top = 144.0
 offset_right = 728.0
@@ -124,7 +129,7 @@ skill_name = "Decrease skill cooldown"
 skill_description = "Decreases skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton3" type="Button" parent="VikingSkillTree" unique_id=179258947 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton3" type="Button" parent="Node2D/VikingSkillTree" unique_id=179258947 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 752.0
 offset_top = 96.0
 offset_right = 776.0
@@ -142,7 +147,7 @@ skill_name = "Decrease skill cooldown"
 skill_description = "decreases skill's cooldowns"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton4" type="Button" parent="VikingSkillTree" unique_id=45043162 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton4" type="Button" parent="Node2D/VikingSkillTree" unique_id=45043162 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 800.0
 offset_top = 64.0
 offset_right = 824.0
@@ -159,7 +164,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton5" type="Button" parent="VikingSkillTree" unique_id=1366700867 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton5" type="Button" parent="Node2D/VikingSkillTree" unique_id=1366700867 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 656.0
 offset_top = 128.0
 offset_right = 680.0
@@ -176,7 +181,7 @@ skill_name = "Ice damage up"
 skill_description = "Increases ice damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton6" type="Button" parent="VikingSkillTree" unique_id=1973285963 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton6" type="Button" parent="Node2D/VikingSkillTree" unique_id=1973285963 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 720.0
 offset_top = 48.0
 offset_right = 744.0
@@ -193,7 +198,7 @@ skill_name = "Ice damage up"
 skill_description = "Increases ice damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton7" type="Button" parent="VikingSkillTree" unique_id=1407157990 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton7" type="Button" parent="Node2D/VikingSkillTree" unique_id=1407157990 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 768.0
 offset_top = 208.0
 offset_right = 792.0
@@ -211,7 +216,7 @@ skill_name = "Decrease skill cooldown"
 skill_description = "Decreases skill's cooldowns"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton8" type="Button" parent="VikingSkillTree" unique_id=2044104550 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton8" type="Button" parent="Node2D/VikingSkillTree" unique_id=2044104550 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 816.0
 offset_top = 288.0
 offset_right = 840.0
@@ -230,7 +235,7 @@ skill_name = "Slow down !"
 skill_description = "Enemies hit by ice element abilities get slowed down"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton9" type="Button" parent="VikingSkillTree" unique_id=1733693435 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton9" type="Button" parent="Node2D/VikingSkillTree" unique_id=1733693435 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 848.0
 offset_top = 144.0
 offset_right = 872.0
@@ -248,7 +253,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton10" type="Button" parent="VikingSkillTree" unique_id=1918334181 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton10" type="Button" parent="Node2D/VikingSkillTree" unique_id=1918334181 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 928.0
 offset_top = 176.0
 offset_right = 952.0
@@ -266,7 +271,7 @@ skill_name = "Watch out !"
 skill_description = "Transform ice in your surrounding in a huge hammer and swing it at your enemies"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="FinalPassive" type="Button" parent="VikingSkillTree" unique_id=1192968209 node_paths=PackedStringArray("skill_description_text")]
+[node name="FinalPassive" type="Button" parent="Node2D/VikingSkillTree" unique_id=1192968209 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 880.0
 offset_top = 240.0
 offset_right = 912.0
@@ -284,9 +289,10 @@ skill_name = "Viking final passive"
 skill_description = "Damage exponentially increases during viking rage"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="WarriorSkillTree" type="Node2D" parent="." unique_id=1169601556]
+[node name="WarriorSkillTree" type="Node2D" parent="Node2D" unique_id=1169601556]
+scale = Vector2(4, 4)
 
-[node name="SkillButton" type="Button" parent="WarriorSkillTree" unique_id=1004580028 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+[node name="SkillButton" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1004580028 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
 offset_left = 512.0
 offset_top = 240.0
 offset_right = 536.0
@@ -306,7 +312,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton1" type="Button" parent="WarriorSkillTree" unique_id=1983619143 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton1" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1983619143 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 464.0
 offset_top = 288.0
 offset_right = 488.0
@@ -324,7 +330,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton2" type="Button" parent="WarriorSkillTree" unique_id=301955850 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton2" type="Button" parent="Node2D/WarriorSkillTree" unique_id=301955850 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 560.0
 offset_top = 192.0
 offset_right = 584.0
@@ -342,7 +348,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton3" type="Button" parent="WarriorSkillTree" unique_id=1651417303 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton3" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1651417303 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 464.0
 offset_top = 240.0
 offset_right = 488.0
@@ -360,7 +366,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton4" type="Button" parent="WarriorSkillTree" unique_id=589974925 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton4" type="Button" parent="Node2D/WarriorSkillTree" unique_id=589974925 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 512.0
 offset_top = 192.0
 offset_right = 536.0
@@ -378,7 +384,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton5" type="Button" parent="WarriorSkillTree" unique_id=1491577469 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton5" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1491577469 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 416.0
 offset_top = 192.0
 offset_right = 440.0
@@ -396,7 +402,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton6" type="Button" parent="WarriorSkillTree" unique_id=173106727 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton6" type="Button" parent="Node2D/WarriorSkillTree" unique_id=173106727 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 464.0
 offset_top = 144.0
 offset_right = 488.0
@@ -414,7 +420,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton7" type="Button" parent="WarriorSkillTree" unique_id=661596225 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton7" type="Button" parent="Node2D/WarriorSkillTree" unique_id=661596225 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 368.0
 offset_top = 144.0
 offset_right = 392.0
@@ -432,7 +438,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton8" type="Button" parent="WarriorSkillTree" unique_id=953588598 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton8" type="Button" parent="Node2D/WarriorSkillTree" unique_id=953588598 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 416.0
 offset_top = 96.0
 offset_right = 440.0
@@ -450,7 +456,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton9" type="Button" parent="WarriorSkillTree" unique_id=91461114 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton9" type="Button" parent="Node2D/WarriorSkillTree" unique_id=91461114 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 320.0
 offset_top = 96.0
 offset_right = 344.0
@@ -468,7 +474,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton10" type="Button" parent="WarriorSkillTree" unique_id=844372227 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton10" type="Button" parent="Node2D/WarriorSkillTree" unique_id=844372227 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 368.0
 offset_top = 48.0
 offset_right = 392.0
@@ -486,7 +492,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="FinalPassive" type="Button" parent="WarriorSkillTree" unique_id=1825418252 node_paths=PackedStringArray("skill_description_text")]
+[node name="FinalPassive" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1825418252 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 320.0
 offset_top = 48.0
 offset_right = 352.0
@@ -503,9 +509,10 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="AssassinSkillTree" type="Node2D" parent="." unique_id=1955003926]
+[node name="AssassinSkillTree" type="Node2D" parent="Node2D" unique_id=1955003926]
+scale = Vector2(4, 4)
 
-[node name="SkillButton" type="Button" parent="AssassinSkillTree" unique_id=980414189 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+[node name="SkillButton" type="Button" parent="Node2D/AssassinSkillTree" unique_id=980414189 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
 offset_left = 512.0
 offset_top = 336.0
 offset_right = 536.0
@@ -525,7 +532,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton1" type="Button" parent="AssassinSkillTree" unique_id=381511296 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton1" type="Button" parent="Node2D/AssassinSkillTree" unique_id=381511296 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 464.0
 offset_top = 384.0
 offset_right = 488.0
@@ -543,7 +550,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton2" type="Button" parent="AssassinSkillTree" unique_id=1939729686 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton2" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1939729686 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 496.0
 offset_top = 416.0
 offset_right = 520.0
@@ -560,7 +567,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton3" type="Button" parent="AssassinSkillTree" unique_id=825451398 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton3" type="Button" parent="Node2D/AssassinSkillTree" unique_id=825451398 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 432.0
 offset_top = 352.0
 offset_right = 456.0
@@ -577,7 +584,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton4" type="Button" parent="AssassinSkillTree" unique_id=1414768498 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton4" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1414768498 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 448.0
 offset_top = 432.0
 offset_right = 472.0
@@ -595,7 +602,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton5" type="Button" parent="AssassinSkillTree" unique_id=1570905536 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton5" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1570905536 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 416.0
 offset_top = 400.0
 offset_right = 440.0
@@ -613,7 +620,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton6" type="Button" parent="AssassinSkillTree" unique_id=959641256 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton6" type="Button" parent="Node2D/AssassinSkillTree" unique_id=959641256 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 416.0
 offset_top = 464.0
 offset_right = 440.0
@@ -631,7 +638,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton7" type="Button" parent="AssassinSkillTree" unique_id=1918369787 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton7" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1918369787 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 384.0
 offset_top = 432.0
 offset_right = 408.0
@@ -649,7 +656,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton8" type="Button" parent="AssassinSkillTree" unique_id=939243274 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton8" type="Button" parent="Node2D/AssassinSkillTree" unique_id=939243274 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 384.0
 offset_top = 496.0
 offset_right = 408.0
@@ -667,7 +674,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton9" type="Button" parent="AssassinSkillTree" unique_id=1874570259 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton9" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1874570259 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 352.0
 offset_top = 464.0
 offset_right = 376.0
@@ -685,7 +692,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton10" type="Button" parent="AssassinSkillTree" unique_id=422609232 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton10" type="Button" parent="Node2D/AssassinSkillTree" unique_id=422609232 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 344.0
 offset_top = 504.0
 offset_right = 368.0
@@ -703,7 +710,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="FinalPassive" type="Button" parent="AssassinSkillTree" unique_id=324122157 node_paths=PackedStringArray("skill_description_text")]
+[node name="FinalPassive" type="Button" parent="Node2D/AssassinSkillTree" unique_id=324122157 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 368.0
 offset_top = 540.0
 offset_right = 400.0
@@ -720,9 +727,10 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="PaladinSkillTree" type="Node2D" parent="." unique_id=422673882]
+[node name="PaladinSkillTree" type="Node2D" parent="Node2D" unique_id=422673882]
+scale = Vector2(4, 4)
 
-[node name="SkillButton" type="Button" parent="PaladinSkillTree" unique_id=1511521144 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
+[node name="SkillButton" type="Button" parent="Node2D/PaladinSkillTree" unique_id=1511521144 node_paths=PackedStringArray("other_path", "other_path1", "other_path2", "skill_description_text")]
 offset_left = 608.0
 offset_top = 336.0
 offset_right = 632.0
@@ -742,7 +750,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton1" type="Button" parent="PaladinSkillTree" unique_id=1626199762 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton1" type="Button" parent="Node2D/PaladinSkillTree" unique_id=1626199762 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 656.0
 offset_top = 384.0
 offset_right = 680.0
@@ -761,7 +769,7 @@ skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 metadata/_edit_use_anchors_ = true
 
-[node name="SkillButton2" type="Button" parent="PaladinSkillTree" unique_id=2124897209 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton2" type="Button" parent="Node2D/PaladinSkillTree" unique_id=2124897209 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 704.0
 offset_top = 432.0
 offset_right = 728.0
@@ -779,7 +787,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton3" type="Button" parent="PaladinSkillTree" unique_id=54289121 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton3" type="Button" parent="Node2D/PaladinSkillTree" unique_id=54289121 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 736.0
 offset_top = 480.0
 offset_right = 760.0
@@ -797,7 +805,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton4" type="Button" parent="PaladinSkillTree" unique_id=324109632 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton4" type="Button" parent="Node2D/PaladinSkillTree" unique_id=324109632 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 800.0
 offset_top = 480.0
 offset_right = 824.0
@@ -815,7 +823,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton5" type="Button" parent="PaladinSkillTree" unique_id=389770083 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton5" type="Button" parent="Node2D/PaladinSkillTree" unique_id=389770083 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 864.0
 offset_top = 496.0
 offset_right = 888.0
@@ -833,7 +841,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton6" type="Button" parent="PaladinSkillTree" unique_id=490595514 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton6" type="Button" parent="Node2D/PaladinSkillTree" unique_id=490595514 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 880.0
 offset_top = 544.0
 offset_right = 904.0
@@ -851,7 +859,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton7" type="Button" parent="PaladinSkillTree" unique_id=276201814 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton7" type="Button" parent="Node2D/PaladinSkillTree" unique_id=276201814 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 864.0
 offset_top = 592.0
 offset_right = 888.0
@@ -869,7 +877,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton8" type="Button" parent="PaladinSkillTree" unique_id=11139929 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton8" type="Button" parent="Node2D/PaladinSkillTree" unique_id=11139929 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 800.0
 offset_top = 608.0
 offset_right = 824.0
@@ -887,7 +895,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton9" type="Button" parent="PaladinSkillTree" unique_id=2013822215 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton9" type="Button" parent="Node2D/PaladinSkillTree" unique_id=2013822215 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 736.0
 offset_top = 592.0
 offset_right = 760.0
@@ -905,7 +913,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="SkillButton10" type="Button" parent="PaladinSkillTree" unique_id=950937891 node_paths=PackedStringArray("skill_description_text")]
+[node name="SkillButton10" type="Button" parent="Node2D/PaladinSkillTree" unique_id=950937891 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 720.0
 offset_top = 544.0
 offset_right = 744.0
@@ -923,7 +931,7 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="FinalPassive" type="Button" parent="PaladinSkillTree" unique_id=1247882383 node_paths=PackedStringArray("skill_description_text")]
+[node name="FinalPassive" type="Button" parent="Node2D/PaladinSkillTree" unique_id=1247882383 node_paths=PackedStringArray("skill_description_text")]
 offset_left = 792.0
 offset_top = 536.0
 offset_right = 824.0
@@ -940,13 +948,13 @@ skill_name = "Damage Up"
 skill_description = "Increases melee damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
-[node name="Panel" type="Panel" parent="." unique_id=476499572]
-layout_mode = 0
-offset_right = 250.0
-offset_bottom = 648.0
+[node name="Panel" type="Sprite2D" parent="Node2D" unique_id=1096581101]
+position = Vector2(16, 16)
+scale = Vector2(3.952, 3.9506176)
+texture = ExtResource("30_2a00w")
+centered = false
 
-[node name="Label" type="Label" parent="Panel" unique_id=313266582]
-layout_mode = 0
+[node name="Label" type="Label" parent="Node2D/Panel" unique_id=313266582]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 233.0
@@ -956,101 +964,101 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[connection signal="mouse_entered" from="SkillButton" to="SkillButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="SkillButton" to="SkillButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton" to="VikingSkillTree/SkillButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton" to="VikingSkillTree/SkillButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton1" to="VikingSkillTree/SkillButton1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton1" to="VikingSkillTree/SkillButton1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton2" to="VikingSkillTree/SkillButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton2" to="VikingSkillTree/SkillButton2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton3" to="VikingSkillTree/SkillButton3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton3" to="VikingSkillTree/SkillButton3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton4" to="VikingSkillTree/SkillButton4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton4" to="VikingSkillTree/SkillButton4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton5" to="VikingSkillTree/SkillButton5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton5" to="VikingSkillTree/SkillButton5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton6" to="VikingSkillTree/SkillButton6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton6" to="VikingSkillTree/SkillButton6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton7" to="VikingSkillTree/SkillButton7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton7" to="VikingSkillTree/SkillButton7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton8" to="VikingSkillTree/SkillButton8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton8" to="VikingSkillTree/SkillButton8" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton9" to="VikingSkillTree/SkillButton9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton9" to="VikingSkillTree/SkillButton9" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/SkillButton10" to="VikingSkillTree/SkillButton10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/SkillButton10" to="VikingSkillTree/SkillButton10" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="VikingSkillTree/FinalPassive" to="VikingSkillTree/FinalPassive" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="VikingSkillTree/FinalPassive" to="VikingSkillTree/FinalPassive" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton" to="WarriorSkillTree/SkillButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton" to="WarriorSkillTree/SkillButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton1" to="WarriorSkillTree/SkillButton1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton1" to="WarriorSkillTree/SkillButton1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton2" to="WarriorSkillTree/SkillButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton2" to="WarriorSkillTree/SkillButton2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton3" to="WarriorSkillTree/SkillButton3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton3" to="WarriorSkillTree/SkillButton3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton4" to="WarriorSkillTree/SkillButton4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton4" to="WarriorSkillTree/SkillButton4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton5" to="WarriorSkillTree/SkillButton5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton5" to="WarriorSkillTree/SkillButton5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton6" to="WarriorSkillTree/SkillButton6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton6" to="WarriorSkillTree/SkillButton6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton7" to="WarriorSkillTree/SkillButton7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton7" to="WarriorSkillTree/SkillButton7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton8" to="WarriorSkillTree/SkillButton8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton8" to="WarriorSkillTree/SkillButton8" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton9" to="WarriorSkillTree/SkillButton9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton9" to="WarriorSkillTree/SkillButton9" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/SkillButton10" to="WarriorSkillTree/SkillButton10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/SkillButton10" to="WarriorSkillTree/SkillButton10" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="WarriorSkillTree/FinalPassive" to="WarriorSkillTree/FinalPassive" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="WarriorSkillTree/FinalPassive" to="WarriorSkillTree/FinalPassive" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton" to="AssassinSkillTree/SkillButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton" to="AssassinSkillTree/SkillButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton1" to="AssassinSkillTree/SkillButton1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton1" to="AssassinSkillTree/SkillButton1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton2" to="AssassinSkillTree/SkillButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton2" to="AssassinSkillTree/SkillButton2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton3" to="AssassinSkillTree/SkillButton3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton3" to="AssassinSkillTree/SkillButton3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton4" to="AssassinSkillTree/SkillButton4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton4" to="AssassinSkillTree/SkillButton4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton5" to="AssassinSkillTree/SkillButton5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton5" to="AssassinSkillTree/SkillButton5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton6" to="AssassinSkillTree/SkillButton6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton6" to="AssassinSkillTree/SkillButton6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton7" to="AssassinSkillTree/SkillButton7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton7" to="AssassinSkillTree/SkillButton7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton8" to="AssassinSkillTree/SkillButton8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton8" to="AssassinSkillTree/SkillButton8" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton9" to="AssassinSkillTree/SkillButton9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton9" to="AssassinSkillTree/SkillButton9" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/SkillButton10" to="AssassinSkillTree/SkillButton10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/SkillButton10" to="AssassinSkillTree/SkillButton10" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="AssassinSkillTree/FinalPassive" to="AssassinSkillTree/FinalPassive" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="AssassinSkillTree/FinalPassive" to="AssassinSkillTree/FinalPassive" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton" to="PaladinSkillTree/SkillButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton" to="PaladinSkillTree/SkillButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton1" to="PaladinSkillTree/SkillButton1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton1" to="PaladinSkillTree/SkillButton1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton2" to="PaladinSkillTree/SkillButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton2" to="PaladinSkillTree/SkillButton2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton3" to="PaladinSkillTree/SkillButton3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton3" to="PaladinSkillTree/SkillButton3" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton4" to="PaladinSkillTree/SkillButton4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton4" to="PaladinSkillTree/SkillButton4" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton5" to="PaladinSkillTree/SkillButton5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton5" to="PaladinSkillTree/SkillButton5" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton6" to="PaladinSkillTree/SkillButton6" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton6" to="PaladinSkillTree/SkillButton6" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton7" to="PaladinSkillTree/SkillButton7" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton7" to="PaladinSkillTree/SkillButton7" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton8" to="PaladinSkillTree/SkillButton8" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton8" to="PaladinSkillTree/SkillButton8" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton9" to="PaladinSkillTree/SkillButton9" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton9" to="PaladinSkillTree/SkillButton9" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/SkillButton10" to="PaladinSkillTree/SkillButton10" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/SkillButton10" to="PaladinSkillTree/SkillButton10" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="PaladinSkillTree/FinalPassive" to="PaladinSkillTree/FinalPassive" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="PaladinSkillTree/FinalPassive" to="PaladinSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/SkillButton" to="Node2D/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/SkillButton" to="Node2D/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton" to="Node2D/VikingSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton" to="Node2D/VikingSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton1" to="Node2D/VikingSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton1" to="Node2D/VikingSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton2" to="Node2D/VikingSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton2" to="Node2D/VikingSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton3" to="Node2D/VikingSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton3" to="Node2D/VikingSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton4" to="Node2D/VikingSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton4" to="Node2D/VikingSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton5" to="Node2D/VikingSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton5" to="Node2D/VikingSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton6" to="Node2D/VikingSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton6" to="Node2D/VikingSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton7" to="Node2D/VikingSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton7" to="Node2D/VikingSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton8" to="Node2D/VikingSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton8" to="Node2D/VikingSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton9" to="Node2D/VikingSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton9" to="Node2D/VikingSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/SkillButton10" to="Node2D/VikingSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/SkillButton10" to="Node2D/VikingSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/VikingSkillTree/FinalPassive" to="Node2D/VikingSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/VikingSkillTree/FinalPassive" to="Node2D/VikingSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton" to="Node2D/WarriorSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton" to="Node2D/WarriorSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton1" to="Node2D/WarriorSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton1" to="Node2D/WarriorSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton2" to="Node2D/WarriorSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton2" to="Node2D/WarriorSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton3" to="Node2D/WarriorSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton3" to="Node2D/WarriorSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton4" to="Node2D/WarriorSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton4" to="Node2D/WarriorSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton5" to="Node2D/WarriorSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton5" to="Node2D/WarriorSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton6" to="Node2D/WarriorSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton6" to="Node2D/WarriorSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton7" to="Node2D/WarriorSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton7" to="Node2D/WarriorSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton8" to="Node2D/WarriorSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton8" to="Node2D/WarriorSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton9" to="Node2D/WarriorSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton9" to="Node2D/WarriorSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/SkillButton10" to="Node2D/WarriorSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/SkillButton10" to="Node2D/WarriorSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/WarriorSkillTree/FinalPassive" to="Node2D/WarriorSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/WarriorSkillTree/FinalPassive" to="Node2D/WarriorSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton" to="Node2D/AssassinSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton" to="Node2D/AssassinSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton1" to="Node2D/AssassinSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton1" to="Node2D/AssassinSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton2" to="Node2D/AssassinSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton2" to="Node2D/AssassinSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton3" to="Node2D/AssassinSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton3" to="Node2D/AssassinSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton4" to="Node2D/AssassinSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton4" to="Node2D/AssassinSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton5" to="Node2D/AssassinSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton5" to="Node2D/AssassinSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton6" to="Node2D/AssassinSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton6" to="Node2D/AssassinSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton7" to="Node2D/AssassinSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton7" to="Node2D/AssassinSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton8" to="Node2D/AssassinSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton8" to="Node2D/AssassinSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton9" to="Node2D/AssassinSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton9" to="Node2D/AssassinSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/SkillButton10" to="Node2D/AssassinSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/SkillButton10" to="Node2D/AssassinSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/AssassinSkillTree/FinalPassive" to="Node2D/AssassinSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/AssassinSkillTree/FinalPassive" to="Node2D/AssassinSkillTree/FinalPassive" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton" to="Node2D/PaladinSkillTree/SkillButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton" to="Node2D/PaladinSkillTree/SkillButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton1" to="Node2D/PaladinSkillTree/SkillButton1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton1" to="Node2D/PaladinSkillTree/SkillButton1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton2" to="Node2D/PaladinSkillTree/SkillButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton2" to="Node2D/PaladinSkillTree/SkillButton2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton3" to="Node2D/PaladinSkillTree/SkillButton3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton3" to="Node2D/PaladinSkillTree/SkillButton3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton4" to="Node2D/PaladinSkillTree/SkillButton4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton4" to="Node2D/PaladinSkillTree/SkillButton4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton5" to="Node2D/PaladinSkillTree/SkillButton5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton5" to="Node2D/PaladinSkillTree/SkillButton5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton6" to="Node2D/PaladinSkillTree/SkillButton6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton6" to="Node2D/PaladinSkillTree/SkillButton6" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton7" to="Node2D/PaladinSkillTree/SkillButton7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton7" to="Node2D/PaladinSkillTree/SkillButton7" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton8" to="Node2D/PaladinSkillTree/SkillButton8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton8" to="Node2D/PaladinSkillTree/SkillButton8" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton9" to="Node2D/PaladinSkillTree/SkillButton9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton9" to="Node2D/PaladinSkillTree/SkillButton9" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/SkillButton10" to="Node2D/PaladinSkillTree/SkillButton10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/SkillButton10" to="Node2D/PaladinSkillTree/SkillButton10" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/PaladinSkillTree/FinalPassive" to="Node2D/PaladinSkillTree/FinalPassive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/PaladinSkillTree/FinalPassive" to="Node2D/PaladinSkillTree/FinalPassive" method="_on_mouse_exited"]

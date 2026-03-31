@@ -9,7 +9,7 @@ func _ready() -> void:
 		i += 1
 
 
-func update_img(i : int, delete : bool) :
+func update_img(i : int, delete : bool) -> void :
 	
 	if FileAccess.file_exists("user://test_data" + str(i) + ".tres") :
 		
@@ -21,7 +21,7 @@ func update_img(i : int, delete : bool) :
 		
 		if SaveData.player_data.last_checkpoint_image :
 			
-			var imag = SaveData.player_data.last_checkpoint_image
+			var imag : Texture2D = SaveData.player_data.last_checkpoint_image
 			
 			button_node.get_child(1).texture = imag
 			
@@ -29,7 +29,7 @@ func update_img(i : int, delete : bool) :
 		
 		else :
 			
-			var imag = load("res://assets/Menus and Death Screen/Load Menu/save_image_test.png")
+			var imag : Texture2D = load("res://assets/Menus and Death Screen/Load Menu/save_image_test.png")
 			
 			button_node.get_child(1).texture = imag
 			
@@ -45,7 +45,7 @@ func update_img(i : int, delete : bool) :
 
 func change_scene_to_game() -> void :
 	
-	var game = load("res://scenes/Other/game.tscn")
+	var game : PackedScene = load("res://scenes/Other/game.tscn")
 	
 	self.queue_free()
 	
@@ -54,7 +54,7 @@ func change_scene_to_game() -> void :
 
 func _on_button_button_up() -> void:
 	
-	var main_menu = load("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
+	var main_menu : PackedScene = load("res://scenes/Menus and Death Screen/Menus/main_menu.tscn")
 	
 	self.queue_free()
 	
