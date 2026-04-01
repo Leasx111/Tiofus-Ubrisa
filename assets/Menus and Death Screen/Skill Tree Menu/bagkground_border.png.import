@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3k4mjgt5mtog"
-path="res://.godot/imported/untitled2.png-1d594e54c17a3a8d6b8d82c1d3f9eb76.ctex"
+uid="uid://baf5cckyqanri"
+path="res://.godot/imported/bagkground_border.png-7c972ef7afbbb2bef3a323406a60b414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Menus and Death Screen/Level Menu/untitled2.png"
-dest_files=["res://.godot/imported/untitled2.png-1d594e54c17a3a8d6b8d82c1d3f9eb76.ctex"]
+source_file="res://assets/Menus and Death Screen/Skill Tree Menu/bagkground_border.png"
+dest_files=["res://.godot/imported/bagkground_border.png-7c972ef7afbbb2bef3a323406a60b414.ctex"]
 
 [params]
 

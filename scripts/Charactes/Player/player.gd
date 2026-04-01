@@ -13,6 +13,8 @@ class_name Player
 @export var viking_rage_screen : ColorRect
 @export var tutorial: TutorialMenu
 @export var menu: Menus
+@export var canvas_layer: CanvasLayer
+@export var canvas_layer_2: CanvasLayer
 @export var exit_menu : ExitMenu
 @export var player_sprite : Sprite2D
 @export var viking_rage_timer : Timer
@@ -393,3 +395,15 @@ func _input(event: InputEvent) -> void :
 		if event.is_action_released("toggle_menu") and tutorial.visible == false :
 			
 			menu.visible = not menu.visible
+			
+			if canvas_layer.get_parent().get_parent().visible == false or menu.visible == false :
+				
+				canvas_layer.visible = false
+				
+				canvas_layer_2.visible = false
+			
+			else :
+				
+				canvas_layer.visible = true
+				
+				canvas_layer_2.visible = true

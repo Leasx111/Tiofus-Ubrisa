@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baf5cckyqanri"
-path="res://.godot/imported/untitled67.png-f10c88314b129f46f49fdbd8102ae937.ctex"
+uid="uid://bf8r5gvimjqbm"
+path="res://.godot/imported/in_game_background.png-e3f5186b5f31601c57fd24598e55bbb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Menus and Death Screen/Level Menu/untitled67.png"
-dest_files=["res://.godot/imported/untitled67.png-f10c88314b129f46f49fdbd8102ae937.ctex"]
+source_file="res://assets/Menus and Death Screen/Settings Menu/in_game_background.png"
+dest_files=["res://.godot/imported/in_game_background.png-e3f5186b5f31601c57fd24598e55bbb4.ctex"]
 
 [params]
 

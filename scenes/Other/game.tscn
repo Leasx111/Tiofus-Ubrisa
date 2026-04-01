@@ -29,7 +29,7 @@ player = NodePath("../Player")
 
 [node name="CurrentRoom" type="Node" parent="RoomLoader" unique_id=87175111]
 
-[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "tutorial", "menu", "exit_menu") instance=ExtResource("1_yqjtg")]
+[node name="Player" parent="." unique_id=1559139556 node_paths=PackedStringArray("player_exp", "death_screen", "room_transition", "roomloader", "viking_rage_screen", "tutorial", "menu", "canvas_layer", "canvas_layer_2", "exit_menu") instance=ExtResource("1_yqjtg")]
 player_exp = NodePath("CanvasLayer/PlayerExp")
 death_screen = NodePath("CanvasLayer/DeathScreen")
 room_transition = NodePath("CanvasLayer/RoomTransition")
@@ -37,6 +37,8 @@ roomloader = NodePath("../RoomLoader")
 viking_rage_screen = NodePath("CanvasLayer/VikingRage")
 tutorial = NodePath("../CanvasLayer/Tutorial")
 menu = NodePath("CanvasLayer/Menus")
+canvas_layer = NodePath("CanvasLayer/Menus/SkillTreeMenu/Node2D/CanvasLayer")
+canvas_layer_2 = NodePath("CanvasLayer/Menus/SkillTreeMenu/Node2D/CanvasLayer2")
 exit_menu = NodePath("CanvasLayer/ExitMenu")
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=122080715]
@@ -139,4 +141,5 @@ player = NodePath("../../Player")
 exit_menu = NodePath("../../Player/CanvasLayer/ExitMenu")
 
 [editable path="Player/CanvasLayer/Menus"]
+[editable path="Player/CanvasLayer/Menus/SkillTreeMenu"]
 [editable path="Player/CanvasLayer/Menus/SettingsMenu"]

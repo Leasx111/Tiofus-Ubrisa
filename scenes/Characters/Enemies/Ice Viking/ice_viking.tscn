@@ -299,6 +299,7 @@ autoplay = &"idle"
 one_shot = true
 
 [node name="SkillTimer" type="Timer" parent="." unique_id=650617766]
+wait_time = 5.0
 autostart = true
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=457898858 groups=["enemy_attack"]]
