@@ -3,6 +3,7 @@ extends Control
 class_name ExitMenu
 
 @onready var main_scene : Node2D = $"/root/MainScene"
+@onready var audio_stream_player: AudioStreamPlayer = $"/root/MainScene/AudioStreamPlayer"
 
 @export var menu: Menus
 @export var tutorial: TutorialMenu
@@ -30,4 +31,6 @@ func _input(event: InputEvent) -> void :
 		
 		visible = not visible
 		
-		get_tree().paused = not get_tree().paused 
+		get_tree().paused = not get_tree().paused
+		
+		audio_stream_player.stop()

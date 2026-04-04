@@ -40,7 +40,7 @@ vertical_alignment = 1
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1771164830]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 2
 mouse_force_pass_scroll_events = false
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_pressed_color = Color(0, 1, 0, 0.11764706)
@@ -50,20 +50,6 @@ theme_override_font_sizes/font_size = 48
 shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Exit"
-icon = ExtResource("3_pjuik")
-flat = true
-icon_alignment = 1
-
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=871206443]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
-theme_override_colors/icon_pressed_color = Color(0, 1, 0, 0.11764706)
-theme_override_colors/icon_hover_color = Color(0, 1, 0, 0.05882353)
-theme_override_fonts/font = ExtResource("2_7ubyi")
-theme_override_font_sizes/font_size = 48
-text = "Settings"
 icon = ExtResource("3_pjuik")
 flat = true
 icon_alignment = 1

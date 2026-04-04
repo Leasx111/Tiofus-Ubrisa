@@ -37,12 +37,10 @@ Controls :
  \"a\" \"d\" to move ;
  \"space\" to jump ;
  \"p\" to attack ;
- \"esc\" to pause the game ;
- \"tab\" to open the level-up menu ;
- \"l\" to open the skill tree menu.
+ \"tab\" to open the menu-selection buttons ;
+ \"esc\" to open the exit menu ;
 
-
-this is my first game, a 2d metroidvania with classes, there is no health, as enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
+this is my first game, a 2d metroidvania, there is no health, so enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
  "
 label_settings = SubResource("LabelSettings_41ecp")
 horizontal_alignment = 1
