@@ -10,7 +10,7 @@ class_name Player
 @export var death_screen : DeathScreen
 @export var room_transition : RoomTransition
 @export var roomloader : RoomLoader
-@export var viking_rage_screen : ColorRect
+@export var viking_rage_screen : Sprite2D
 @export var tutorial: TutorialMenu
 @export var menu: Menus
 @export var canvas_layer: CanvasLayer
@@ -195,11 +195,13 @@ func calc_damage() -> void :
 func respawn() -> void :
 	
 	attack = 0
-	SaveData.player_data.viking_rage = 1
+	SaveData.player_data.viking_rage = SaveData.player_data.max_viking_rage
 	
 	death_screen.visible = false
 	menu.visible = false
 	viking_rage_screen.visible = false
+	
+	velocity = Vector2(0, 0)
 	
 	if SaveData.player_data.last_checkpoint :
 		

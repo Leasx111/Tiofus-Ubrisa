@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n5t1na86412" path="res://assets/Characters/Player/Exp bar/under.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://djdhf1eje800r" path="res://assets/Characters/Player/Exp bar/over.png" id="8_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cisv3e8sab1vo" path="res://assets/Characters/Player/Exp bar/progress.png" id="9_kvuet"]
+[ext_resource type="Texture2D" uid="uid://dc2hti52ynyrw" path="res://assets/Characters/Player/Viking Rage/viking_rage.png" id="12_ugoi2"]
 [ext_resource type="PackedScene" uid="uid://dyflootcf5am3" path="res://scenes/Menus and Death Screen/Menus/tutorial.tscn" id="13_ugoi2"]
 
 [node name="Game" type="Node2D" unique_id=2101353719 node_paths=PackedStringArray("room_transition", "roomloader", "tutorial", "player")]
@@ -122,14 +123,11 @@ texture_over = ExtResource("8_dinhu")
 texture_progress = ExtResource("9_kvuet")
 metadata/_edit_use_anchors_ = true
 
-[node name="VikingRage" type="ColorRect" parent="Player/CanvasLayer" unique_id=2042479328]
+[node name="VikingRage" type="Sprite2D" parent="Player/CanvasLayer" unique_id=1456928121]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.7607843, 0, 0, 0.16470589)
+z_index = 2
+texture = ExtResource("12_ugoi2")
+centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1624551238]
 layer = 2
@@ -141,5 +139,6 @@ player = NodePath("../../Player")
 exit_menu = NodePath("../../Player/CanvasLayer/ExitMenu")
 
 [editable path="Player/CanvasLayer/Menus"]
+[editable path="Player/CanvasLayer/Menus/LevelMenu"]
 [editable path="Player/CanvasLayer/Menus/SkillTreeMenu"]
 [editable path="Player/CanvasLayer/Menus/SettingsMenu"]

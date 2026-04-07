@@ -181,6 +181,8 @@ func flip_sprite(facing : String) -> void :
 func _on_player_dead() -> void : 
 	
 	self.position = start_pos
+	
+	on_screen = false
 
 
 func _on_area_2d_2_area_entered(area : Area2D) -> void :
