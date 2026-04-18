@@ -16,7 +16,7 @@ class_name Enemy
 
 @onready var player : Player = $"/root/MainScene/Game/Player"
 
-const speed : float = 75.0
+const speed : float = 100.0
 
 enum States {idle, chasing, falling, hurt, attacking, first_skill, final_skill, dead}
 

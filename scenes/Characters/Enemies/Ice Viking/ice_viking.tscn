@@ -331,9 +331,9 @@ position = Vector2(-2.3841858e-07, 1.1920929e-07)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_3v4uw")
 
-[node name="EnemyArea" type="Area2D" parent="." unique_id=212516017 groups=["enemy_attack", "hurtbox"]]
+[node name="EnemyArea" type="Area2D" parent="." unique_id=212516017 groups=["hurtbox"]]
 
-[node name="EnemyShape" type="CollisionShape2D" parent="EnemyArea" unique_id=1056343209 groups=["enemy_attack", "hurtbox"]]
+[node name="EnemyShape" type="CollisionShape2D" parent="EnemyArea" unique_id=1056343209 groups=["hurtbox"]]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_4ra3w")
 

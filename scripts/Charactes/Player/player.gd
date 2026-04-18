@@ -19,13 +19,14 @@ class_name Player
 @export var player_sprite : Sprite2D
 @export var viking_rage_timer : Timer
 @export var vulnerability_timer : Timer
+@export var vulnerability_attack_timer: Timer
 @export var invincibility_timer : Timer
 
 @onready var enemy : Enemy = Enemy.new()
 @onready var first_room : PackedScene = load("res://scenes/Rooms/room_1.tscn")
 
 const jump_speed : int = -400
-const speed : int = 200
+const speed : int = 250
 
 enum States {idle, running, jumping, falling, hurt, first_attack, second_attack, third_attack, rolling, dead}
 
@@ -317,6 +318,10 @@ func _on_animation_player_animation_finished(anim_name : StringName) -> void :
 		
 		elif anim_name == "attack_3" :
 			
+			vulnerability_attack_timer.wait_time = 0.5 - (0.005 * SaveData.player_data.temperance)
+			
+			vulnerability_attack_timer.start()
+			
 			attack = 0
 		
 		elif anim_name == "slide" :
@@ -380,7 +385,7 @@ func _input(event: InputEvent) -> void :
 			
 			state = States.rolling
 		
-		if event.is_action_released("attack") and state != States.rolling and state != States.hurt :
+		if event.is_action_released("attack") and state != States.rolling and state != States.hurt and vulnerability_attack_timer.is_stopped():
 			
 			if attack == 1 :
 				

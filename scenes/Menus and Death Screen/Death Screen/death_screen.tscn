@@ -45,5 +45,6 @@ vertical_alignment = 1
 [node name="TextBackground" type="Sprite2D" parent="AspectRatioContainer" unique_id=77385926]
 modulate = Color(1, 1, 1, 0.003921569)
 z_index = 1
-position = Vector2(576, 324)
+position = Vector2(576, 327)
+scale = Vector2(1, 1.0967742)
 texture = ExtResource("2_mqh5l")
