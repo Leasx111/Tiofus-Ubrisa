@@ -100,8 +100,6 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
 unlocked = true
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
@@ -343,8 +341,8 @@ other_path = NodePath("../../VikingSkillTree/SkillButton")
 other_path1 = NodePath("../../AssassinSkillTree/SkillButton")
 other_path2 = NodePath("../../PaladinSkillTree/SkillButton")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Watch out !"
+skill_description = "Perform a spinning attack, damaging enemies in a 360 radius"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton1" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1983619143 node_paths=PackedStringArray("skill_description_text")]
@@ -361,8 +359,8 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tempered blade"
+skill_description = "Increases damage by 15%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton2" type="Button" parent="Node2D/WarriorSkillTree" unique_id=301955850 node_paths=PackedStringArray("skill_description_text")]
@@ -379,8 +377,8 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Call from below "
+skill_description = "Decreases skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton3" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1651417303 node_paths=PackedStringArray("skill_description_text")]
@@ -397,8 +395,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton5")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "I haven't finished yet !"
+skill_description = "Increase combo attacks "
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton4" type="Button" parent="Node2D/WarriorSkillTree" unique_id=589974925 node_paths=PackedStringArray("skill_description_text")]
@@ -415,8 +413,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton6")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tempered blade"
+skill_description = "Increases damage by 15%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton5" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1491577469 node_paths=PackedStringArray("skill_description_text")]
@@ -433,8 +431,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton7")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Call from below "
+skill_description = "Decreases skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton6" type="Button" parent="Node2D/WarriorSkillTree" unique_id=173106727 node_paths=PackedStringArray("skill_description_text")]
@@ -451,8 +449,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton8")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Call from below "
+skill_description = "Decreases skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton7" type="Button" parent="Node2D/WarriorSkillTree" unique_id=661596225 node_paths=PackedStringArray("skill_description_text")]
@@ -469,8 +467,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton9")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "I haven't finished yet !"
+skill_description = "Increase combo attacks "
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton8" type="Button" parent="Node2D/WarriorSkillTree" unique_id=953588598 node_paths=PackedStringArray("skill_description_text")]
@@ -487,8 +485,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton10")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "I haven't finished yet !"
+skill_description = "Increase combo attacks "
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton9" type="Button" parent="Node2D/WarriorSkillTree" unique_id=91461114 node_paths=PackedStringArray("skill_description_text")]
@@ -505,8 +503,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../FinalPassive")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Call from below "
+skill_description = "Decreases skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton10" type="Button" parent="Node2D/WarriorSkillTree" unique_id=844372227 node_paths=PackedStringArray("skill_description_text")]
@@ -523,8 +521,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../FinalPassive")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Blender !"
+skill_description = "Perform an upward attack, sending the enemy flying in the sky, to perform an air-combo"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="FinalPassive" type="Button" parent="Node2D/WarriorSkillTree" unique_id=1825418252 node_paths=PackedStringArray("skill_description_text")]
@@ -540,8 +538,8 @@ flat = true
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Knight final passive"
+skill_description = "For each enemy hit with a single attack or skill, it's damage is increased"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="AssassinSkillTree" type="Node2D" parent="Node2D" unique_id=1955003926]
@@ -563,8 +561,8 @@ other_path = NodePath("../../VikingSkillTree/SkillButton")
 other_path1 = NodePath("../../WarriorSkillTree/SkillButton")
 other_path2 = NodePath("../../PaladinSkillTree/SkillButton")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Shhh...!"
+skill_description = "You can crouch to partially hide from enemies"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton1" type="Button" parent="Node2D/AssassinSkillTree" unique_id=381511296 node_paths=PackedStringArray("skill_description_text")]
@@ -581,8 +579,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton2"), NodePath("../SkillButton3"), NodePath("../SkillButton4"), NodePath("../SkillButton5")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Blind !"
+skill_description = "Enemies' view radius decreased"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton2" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1939729686 node_paths=PackedStringArray("skill_description_text")]
@@ -598,8 +596,8 @@ flat = true
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "That packs a punch !"
+skill_description = "Increase crit damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton3" type="Button" parent="Node2D/AssassinSkillTree" unique_id=825451398 node_paths=PackedStringArray("skill_description_text")]
@@ -615,8 +613,8 @@ flat = true
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Gambling ?"
+skill_description = "Increases crit change by 10%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton4" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1414768498 node_paths=PackedStringArray("skill_description_text")]
@@ -633,8 +631,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton6")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Gambling ?"
+skill_description = "Increases crit chance by 10%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton5" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1570905536 node_paths=PackedStringArray("skill_description_text")]
@@ -651,8 +649,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton7")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "That packs a punch !"
+skill_description = "Increase crit damage by 20%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton6" type="Button" parent="Node2D/AssassinSkillTree" unique_id=959641256 node_paths=PackedStringArray("skill_description_text")]
@@ -669,8 +667,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton8")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Blind !"
+skill_description = "Enemies' view radius decreased"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton7" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1918369787 node_paths=PackedStringArray("skill_description_text")]
@@ -687,8 +685,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton9")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Gambling ?"
+skill_description = "Increase crit chance by 10%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton8" type="Button" parent="Node2D/AssassinSkillTree" unique_id=939243274 node_paths=PackedStringArray("skill_description_text")]
@@ -705,8 +703,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../FinalPassive")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Gambling ?"
+skill_description = "Increase crit chance by 10%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton9" type="Button" parent="Node2D/AssassinSkillTree" unique_id=1874570259 node_paths=PackedStringArray("skill_description_text")]
@@ -723,8 +721,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton10")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Blind !"
+skill_description = "Enemies' view radius decreased"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton10" type="Button" parent="Node2D/AssassinSkillTree" unique_id=422609232 node_paths=PackedStringArray("skill_description_text")]
@@ -741,8 +739,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../FinalPassive")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Ouch !!"
+skill_description = "Perform a rotating kick, pushing away and stunning the enemy"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="FinalPassive" type="Button" parent="Node2D/AssassinSkillTree" unique_id=324122157 node_paths=PackedStringArray("skill_description_text")]
@@ -758,8 +756,8 @@ flat = true
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Rogue final passive"
+skill_description = "Damage dealt from behind is increased by 300%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="PaladinSkillTree" type="Node2D" parent="Node2D" unique_id=422673882]
@@ -781,8 +779,8 @@ other_path = NodePath("../../VikingSkillTree/SkillButton")
 other_path1 = NodePath("../../WarriorSkillTree/SkillButton")
 other_path2 = NodePath("../../AssassinSkillTree/SkillButton")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Blinding Fire"
+skill_description = "Increases weapon damage by 100% for 30s"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton1" type="Button" parent="Node2D/PaladinSkillTree" unique_id=1626199762 node_paths=PackedStringArray("skill_description_text")]
@@ -799,8 +797,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton2")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tick Tock"
+skill_description = "Decrease skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 metadata/_edit_use_anchors_ = true
 
@@ -818,8 +816,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton3")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Negative Fire"
+skill_description = "Increases \"Blinding Dire\" buff from 100% to 200%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton3" type="Button" parent="Node2D/PaladinSkillTree" unique_id=54289121 node_paths=PackedStringArray("skill_description_text")]
@@ -836,8 +834,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton4")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tick Tock"
+skill_description = "Decrease skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton4" type="Button" parent="Node2D/PaladinSkillTree" unique_id=324109632 node_paths=PackedStringArray("skill_description_text")]
@@ -854,8 +852,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton5")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Die, Die, Die!"
+skill_description = "Dead enemies burn (if killed with arcane damage)"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton5" type="Button" parent="Node2D/PaladinSkillTree" unique_id=389770083 node_paths=PackedStringArray("skill_description_text")]
@@ -872,8 +870,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton6")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tick Tock"
+skill_description = "Decrease skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton6" type="Button" parent="Node2D/PaladinSkillTree" unique_id=490595514 node_paths=PackedStringArray("skill_description_text")]
@@ -890,8 +888,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton7")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Sunlight's vow"
+skill_description = "Every Damage is arcane"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton7" type="Button" parent="Node2D/PaladinSkillTree" unique_id=276201814 node_paths=PackedStringArray("skill_description_text")]
@@ -908,8 +906,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton8")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tick Tock"
+skill_description = "Decrease skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton8" type="Button" parent="Node2D/PaladinSkillTree" unique_id=11139929 node_paths=PackedStringArray("skill_description_text")]
@@ -926,8 +924,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton9")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Raining hammers"
+skill_description = "A hammer falls down from the sky on every nearby enemy"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton9" type="Button" parent="Node2D/PaladinSkillTree" unique_id=2013822215 node_paths=PackedStringArray("skill_description_text")]
@@ -944,8 +942,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../SkillButton10")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Burn !"
+skill_description = "Increases \"Die, die, die !\" damage by 50%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="SkillButton10" type="Button" parent="Node2D/PaladinSkillTree" unique_id=950937891 node_paths=PackedStringArray("skill_description_text")]
@@ -962,8 +960,8 @@ expand_icon = true
 script = ExtResource("1_8lby2")
 next_button = Array[NodePath]([NodePath("../FinalPassive")])
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Tick Tock"
+skill_description = "Decrease skill's cooldown"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [node name="FinalPassive" type="Button" parent="Node2D/PaladinSkillTree" unique_id=1247882383 node_paths=PackedStringArray("skill_description_text")]
@@ -979,8 +977,8 @@ flat = true
 expand_icon = true
 script = ExtResource("1_8lby2")
 skill_description_text = NodePath("../../CanvasLayer/Panel/Label")
-skill_name = "Damage Up"
-skill_description = "Increases melee damage by 20%"
+skill_name = "Paladin final passive"
+skill_description = "for every enemy hit with a signle skill, it's cooldown is reduced by 15%"
 metadata/_custom_type_script = "uid://c7cp406ct8s2a"
 
 [connection signal="mouse_entered" from="Node2D/SkillButton" to="Node2D/SkillButton" method="_on_mouse_entered"]
