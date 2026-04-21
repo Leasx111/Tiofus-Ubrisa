@@ -36,11 +36,13 @@ Controls :
 
  \"a\" \"d\" to move ;
  \"space\" to jump ;
- \"p\" to attack ;
+ \"p\" / \"left mouse\" to attack ;
+ \"enter\" to save (near a checkpoint) ; 
  \"tab\" to open the menu-selection buttons ;
  \"esc\" to open the exit menu ;
 
-this is my first game, a 2d metroidvania, there is no health, so enemies will kill you in just 1 hit, don't worry tho, your rage will save your live... well, sometimes !
+
+this is my first game, a 2d metroidvania, there is no health, so enemies will kill you in just 1 hit, don't worry tho, your rage will save your life... well, sometimes ! (sorry but arcane doesn't do anything right now)
  "
 label_settings = SubResource("LabelSettings_41ecp")
 horizontal_alignment = 1

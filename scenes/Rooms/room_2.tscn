@@ -1381,7 +1381,7 @@ position = Vector2(-470, 0)
 position = Vector2(530, 0)
 
 [node name="Enemy" parent="." unique_id=553816022 instance=ExtResource("3_77yun")]
-position = Vector2(-1.9999999, -30)
+position = Vector2(-1.9999998, -32)
 health = 500
 xp = 1000
 
