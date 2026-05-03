@@ -250,6 +250,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1r8a"]
+radius = 17.599998
+height = 62.399994
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1r8a"]
 size = Vector2(107.20001, 17.600002)
@@ -305,7 +307,7 @@ autostart = true
 [node name="AttackArea" type="Area2D" parent="." unique_id=457898858 groups=["enemy_attack"]]
 
 [node name="AttackShape" type="CollisionShape2D" parent="AttackArea" unique_id=344209363 groups=["enemy_attack"]]
-position = Vector2(-19.999998, 1)
+position = Vector2(-12, 1)
 shape = SubResource("CapsuleShape2D_f1r8a")
 disabled = true
 

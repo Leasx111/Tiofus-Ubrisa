@@ -202,6 +202,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwavj"]
+radius = 17.0
+height = 34.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(11.999998, 8.199999)
@@ -214,6 +216,7 @@ radius = 9.0
 height = 52.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=553816022 node_paths=PackedStringArray("enemy_sprite", "enemy_collision", "enemy_area", "enemy_attack_area", "enemy_aggro_area", "vulnerability_timer", "enemy_health", "animation_player") groups=["enemy_attack", "hurtbox"]]
+collision_mask = 128
 script = ExtResource("1_md0e3")
 enemy_sprite = NodePath("EnemySprite")
 enemy_collision = NodePath("EnemyCollision")
@@ -248,7 +251,7 @@ one_shot = true
 [node name="AttackArea" type="Area2D" parent="." unique_id=457898858 groups=["enemy_attack"]]
 
 [node name="AttackShape" type="CollisionShape2D" parent="AttackArea" unique_id=344209363 groups=["enemy_attack"]]
-position = Vector2(20, 1)
+position = Vector2(13, 1)
 shape = SubResource("CapsuleShape2D_xwavj")
 disabled = true
 

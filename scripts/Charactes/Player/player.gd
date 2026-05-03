@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void :
 				
 				state = States.idle
 			
-			if velocity.y > 0 :
+			if velocity.y >= 0 and not is_on_floor() :
 				
 				state = States.falling
 			
@@ -111,10 +111,12 @@ func set_state(new_state : States) -> void :
 	
 	elif state == States.jumping :
 		
+		PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY, 980)
 		animation_player.play("jump")
 	
 	elif previous_state == States.jumping :
 		
+		PhysicsServer2D.area_set_param(get_viewport().find_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY, 2250)
 		animation_player.play("fall")
 	
 	elif state == States.running :
@@ -195,6 +197,9 @@ func calc_damage() -> void :
 
 func respawn() -> void :
 	
+	await roomloader.change_room(first_room, "spawn_left")
+	
+	flip_sprite("right")
 	attack = 0
 	SaveData.player_data.viking_rage = SaveData.player_data.max_viking_rage
 	
@@ -204,22 +209,11 @@ func respawn() -> void :
 	
 	velocity = Vector2(0, 0)
 	
-	if SaveData.player_data.last_checkpoint :
+	if SaveData.player_data.last_checkpoint_position :
 		
-		await room_transition.fade_in()
-		
-		room_transition.fade_out()
-		
-		state = States.idle
-		position = SaveData.player_data.last_checkpoint.position
-	
-	else :
-		
-		roomloader.change_room(first_room, "spawn_left")
+		position = SaveData.player_data.last_checkpoint_position
 
 func set_last_checkpoint(checkpoint : Checkpoint) -> void :
-	
-	SaveData.player_data.last_checkpoint = checkpoint
 	
 	SaveData.player_data.last_checkpoint_position = checkpoint.global_position
 	
@@ -377,7 +371,7 @@ func _input(event: InputEvent) -> void :
 		
 		if event.is_action_pressed("jump") and is_on_floor():
 			
-			velocity.y = jump_speed
+			velocity.y += jump_speed
 			
 			state = States.jumping
 		

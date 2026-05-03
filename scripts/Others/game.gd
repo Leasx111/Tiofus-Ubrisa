@@ -15,18 +15,22 @@ func _ready() -> void :
 	
 	await roomloader.change_room(first_room, "spawn_left")
 	
-	if SaveData.load_game != 0:
-		
-		SaveData.emit_signal("load_requested")
+	if SaveData.load_game != 0 :
 		
 		SaveData.load_game = 0
 		
-		player.position = SaveData.player_data.last_checkpoint_position
+		if SaveData.player_data.last_checkpoint_position :
+			
+			player.position = SaveData.player_data.last_checkpoint_position
+		
+		else : 
+			
+			player.position = Vector2(-470, 0)
 	
 	else : 
 		
 		await tutorial.fade_in()
-		
+	
 	await room_transition.tween_finished
 	
 	player.player_exp.max_value = SaveData.player_data.max_XP

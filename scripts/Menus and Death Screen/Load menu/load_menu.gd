@@ -67,9 +67,9 @@ func _on_load_button_0_button_up() -> void:
 	
 	if FileAccess.file_exists("user://test_data0.tres") == true :
 		
-		change_scene_to_game()
-		
 		SaveData.player_data = ResourceLoader.load("user://test_data0.tres")
+		
+		change_scene_to_game()
 		
 		SaveData.current_data = 0
 

@@ -34,5 +34,3 @@ var current_xp : int = 0
 var XP_to_next_level : int
 @export
 var unlocked_skills : Array
-
-var last_checkpoint : Checkpoint
