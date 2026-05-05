@@ -13,6 +13,12 @@ var player_is_near : bool = false
 
 var lit : bool = false
 
+func _ready() -> void :
+	
+	if SaveData.player_data.last_checkpoint_position == self.position : 
+		
+		save()
+
 # Player is near if inside area
 func _on_area_2d_area_entered(area: Area2D) -> void :
 	
@@ -31,12 +37,16 @@ func _input(event : InputEvent) -> void :
 	
 	if event.is_action_released("save") and self.player_is_near :
 		
-		player.set_last_checkpoint(self)
+		save()
+
+func save() :
+	
+	player.set_last_checkpoint(self)
+	
+	if self.lit == false :
 		
-		if self.lit == false :
-			
-			animation_player.play("on_save")
-		
-		self.lit = true
-		
-		SaveData.emit_signal("save_requested")
+		animation_player.play("on_save")
+	
+	self.lit = true
+	
+	SaveData.emit_signal("save_requested")

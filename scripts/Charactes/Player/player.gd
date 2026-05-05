@@ -249,21 +249,25 @@ func gain_exp(xp : int) -> void :
 	
 	var tween_increase_value : Tween = get_tree().create_tween()
 	
-	tween_increase_value.tween_property(player_exp, "value", player_exp.value + xp, 1)
+	var final_xp : float = player_exp.value + xp
 	
-	await tween_increase_value.finished
+	tween_increase_value.tween_property(player_exp, "value", final_xp, 1)
 	
-	if player_exp.value >= player_exp.max_value :
+	await  tween_increase_value.finished
+	
+	while player_exp.value >= player_exp.max_value :
 		
 		var tween_value : Tween = get_tree().create_tween()
 		
-		tween_value.tween_property(player_exp, "value", player_exp.value - player_exp.max_value, 0.2)
+		var final_xp_value : float = player_exp.value - player_exp.max_value
 		
-		await  tween_value.finished
+		tween_value.tween_property(player_exp, "value", final_xp_value, 0.2)
 		
 		SaveData.player_data.max_XP = player_exp.max_value * 1.25
 		
 		player_exp.max_value = SaveData.player_data.max_XP
+		
+		await tween_value.finished
 		
 		SaveData.player_data.level += 1
 		
@@ -355,7 +359,7 @@ func _on_enemy_killed(xp : int) -> void :
 	
 	viking_rage_screen.visible = false
 	
-	gain_exp(xp)
+	await gain_exp(xp)
 
 func _on_invincibility_timer_timeout() -> void:
 	
