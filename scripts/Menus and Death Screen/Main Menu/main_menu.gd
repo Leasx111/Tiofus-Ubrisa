@@ -6,6 +6,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void :
 	
+	SaveData.player_data = PlayerData.new()
+	
 	SaveData.calc_files()
 	
 	if SaveData.save_files <= 0 :

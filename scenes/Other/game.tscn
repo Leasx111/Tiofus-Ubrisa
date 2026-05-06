@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n5t1na86412" path="res://assets/Characters/Player/Exp bar/under.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://djdhf1eje800r" path="res://assets/Characters/Player/Exp bar/over.png" id="8_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cisv3e8sab1vo" path="res://assets/Characters/Player/Exp bar/progress.png" id="9_kvuet"]
+[ext_resource type="Script" uid="uid://slgnpvvdgqvq" path="res://scripts/Others/player_exp.gd" id="12_ith2t"]
 [ext_resource type="Texture2D" uid="uid://dc2hti52ynyrw" path="res://assets/Characters/Player/Viking Rage/viking_rage.png" id="12_ugoi2"]
 [ext_resource type="PackedScene" uid="uid://dyflootcf5am3" path="res://scenes/Menus and Death Screen/Menus/tutorial.tscn" id="13_ugoi2"]
 
@@ -112,7 +113,7 @@ offset_top = -0.02400589
 offset_right = -576.00006
 offset_bottom = -7.2800064
 scale = Vector2(3, 2)
-allow_greater = true
+step = 0.1
 nine_patch_stretch = true
 stretch_margin_left = 4
 stretch_margin_top = 3
@@ -121,6 +122,7 @@ stretch_margin_bottom = 3
 texture_under = ExtResource("7_kvpfn")
 texture_over = ExtResource("8_dinhu")
 texture_progress = ExtResource("9_kvuet")
+script = ExtResource("12_ith2t")
 metadata/_edit_use_anchors_ = true
 
 [node name="VikingRage" type="Sprite2D" parent="Player/CanvasLayer" unique_id=1456928121]
@@ -137,6 +139,9 @@ visible = false
 modulate = Color(1, 1, 1, 0.4)
 player = NodePath("../../Player")
 exit_menu = NodePath("../../Player/CanvasLayer/ExitMenu")
+
+[connection signal="max_xp_reached" from="Player/CanvasLayer/PlayerExp" to="Player" method="level_up"]
+[connection signal="value_changed" from="Player/CanvasLayer/PlayerExp" to="Player/CanvasLayer/PlayerExp" method="_on_value_changed"]
 
 [editable path="Player/CanvasLayer/Menus"]
 [editable path="Player/CanvasLayer/Menus/LevelMenu"]

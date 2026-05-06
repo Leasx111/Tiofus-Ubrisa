@@ -36,6 +36,8 @@ var direction : float
 var attack : int = 0
 var damage : int
 
+var xp_to_gain : float 
+
 signal enemy_killed
 
 @warning_ignore("unused_signal")
@@ -245,40 +247,48 @@ func flip_sprite(facing : String) -> void :
 		player_collision_shape.position.x = abs(player_collision_shape.position.x) * 1
 		player_area.position.x = abs(player_area.position.x) * 1
 
-func gain_exp(xp : int) -> void :
+func gain_exp(xp : float) -> void :
 	
 	var tween_increase_value : Tween = get_tree().create_tween()
 	
 	var final_xp : float = player_exp.value + xp
 	
-	tween_increase_value.tween_property(player_exp, "value", final_xp, 1)
+	xp_to_gain = xp
 	
-	await  tween_increase_value.finished
+	xp_to_gain -= SaveData.player_data.XP_to_next_level
 	
-	while player_exp.value >= player_exp.max_value :
-		
-		var tween_value : Tween = get_tree().create_tween()
-		
-		var final_xp_value : float = player_exp.value - player_exp.max_value
-		
-		tween_value.tween_property(player_exp, "value", final_xp_value, 0.2)
-		
-		SaveData.player_data.max_XP = player_exp.max_value * 1.25
-		
-		player_exp.max_value = SaveData.player_data.max_XP
-		
-		await tween_value.finished
-		
-		SaveData.player_data.level += 1
-		
-		SaveData.player_data.level_up_points += 1
-		
-		if SaveData.player_data.level % 10 == 0 :
-			
-			SaveData.player_data.skill_points += 1
+	tween_increase_value.tween_property(player_exp, "value", final_xp, log(final_xp) / log(10))
 	
 	@warning_ignore("narrowing_conversion")
 	SaveData.player_data.current_xp = player_exp.value
+
+
+func level_up() -> void :
+	
+	get_tree().get_processed_tweens()[0].kill()
+	
+	var tween_value : Tween = get_tree().create_tween().parallel()
+	
+	var final_xp_value : float = player_exp.value - player_exp.max_value
+	
+	tween_value.tween_property(player_exp, "value", final_xp_value, 0.2)
+	
+	SaveData.player_data.max_XP = player_exp.max_value * 1.25
+	
+	player_exp.max_value = SaveData.player_data.max_XP
+	
+	await tween_value.finished
+	
+	SaveData.player_data.level += 1
+	
+	SaveData.player_data.level_up_points += 1
+	
+	if SaveData.player_data.level % 10 == 0 :
+		
+		SaveData.player_data.skill_points += 1
+	
+	gain_exp(xp_to_gain)
+
 
 func _on_animation_player_animation_finished(anim_name : StringName) -> void :
 	
@@ -359,7 +369,7 @@ func _on_enemy_killed(xp : int) -> void :
 	
 	viking_rage_screen.visible = false
 	
-	await gain_exp(xp)
+	gain_exp(xp)
 
 func _on_invincibility_timer_timeout() -> void:
 	
@@ -369,21 +379,25 @@ func _on_viking_rage_timer_timeout() -> void:
 	
 	die()
 
-func _input(event: InputEvent) -> void :
+func _unhandled_input(event: InputEvent) -> void : 
 	
-	if state != States.dead :
+	if state != States.dead and state != States.rolling :
 		
-		if event.is_action_pressed("jump") and is_on_floor():
+		if event.is_action_pressed("jump") and is_on_floor() and state not in [States.first_attack, States.second_attack, States.third_attack] :
 			
 			velocity.y += jump_speed
 			
 			state = States.jumping
 		
+		elif event.is_action_released("jump") and state != States.falling :
+			
+			velocity.y -= - 100
+		
 		if event.is_action_pressed("slide") and state == States.running and is_on_floor() and vulnerability_timer.is_stopped() :
 			
 			state = States.rolling
 		
-		if event.is_action_released("attack") and state != States.rolling and state != States.hurt and vulnerability_attack_timer.is_stopped():
+		if event.is_action_released("attack") and state != States.hurt and vulnerability_attack_timer.is_stopped():
 			
 			if attack == 1 :
 				

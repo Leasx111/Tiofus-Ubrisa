@@ -278,7 +278,7 @@ vulnerability_timer = NodePath("VulnerabilityTimer")
 enemy_health = NodePath("EnemyHealth")
 animation_player = NodePath("AnimationPlayer")
 health = 100
-xp = 300
+xp = 10000
 
 [node name="EnemySprite" type="Sprite2D" parent="." unique_id=958056666]
 z_index = 1
